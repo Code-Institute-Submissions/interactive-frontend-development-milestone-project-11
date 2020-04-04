@@ -20,60 +20,34 @@ function getRandom() {
 
 //Displaying words on flashcard
 function loadFlashcard(displayWords) {
-    var wordNum = -1;
+    console.log(displayWords);
+    var wordNum = 0;
 
-//var questionNum = -1;
-//var numCorrect = 0;
-
-function loadWord() {
-    ++wordNum;
-    if (wordNum == displayWords.length) {
-        $("#nextWord").hide();
-        $("start").show();
-    } else {
+    function loadWord() {
+      
+        if (wordNum == (displayWords.length-1)) {
+            document.getElementById("flashcard").innerHTML = displayWords[wordNum];
+            $("#nextWord").hide();
+            $("#start").show();
+        } else {
         document.getElementById("flashcard").innerHTML = displayWords[wordNum];
+        ++wordNum;
+        }
     }
-}
-loadWord();
+    loadWord();
 
-
-document.getElementById("nextWord").addEventListener("click", function(e) {
+    document.getElementById("nextWord").addEventListener("click", function(e) {
         loadWord();
-});
+    });
+
 }
 
-//Displaying words on flashcard
-//function firstFlashcard(displayWords) {
-  //  document.getElementById("flashcard").append(" " + displayWords[0]);
-    //nextFlashcard(displayWords);
-//}
+// Start Gameboard function
 
-//async function nextFlashcard(displayWords) {
-  //  await $("#nextWord").click(function(){
-    //    for (var i=; i<displayWords.length; i++) {
-      //      document.getElementById("flashcard").remove(" " + displayWords[i-1])
-        //    document.getElementById("flashcard").append(" " + displayWords[i])
-         //  });
-    
+// Inputting words function
 
-//}
+// 
 
+// Level function
 
-  //  for (var i=0; i<displayWords.length; i++) {
-    //    async function nextFlashcard() {
-
-      //  await $("#nextWord").click(function(){
-        //    document.getElementById("flashcard").remove(" " + displayWords[i-1])
-          //  document.getElementById("flashcard").append(" " + displayWords[i-1])
-            //});
-        //}
-        //if (i == (displayWords.length-1)) {
-          //  $("#nextWord").hide();
-            //$("start").show();
-        //} else {
-          //  $("#nextWord").show();
-        //}
-
-   // }
-    //console.log(displayWords);
-//}
+// Round function
