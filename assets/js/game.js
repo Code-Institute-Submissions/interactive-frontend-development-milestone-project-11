@@ -15,10 +15,65 @@ function getRandom() {
     }
     //console.log(randWords);
     console.log(leftWords);
-    flashcardDisplay(randWords);
+    loadFlashcard(randWords);
 }
 
 //Displaying words on flashcard
-function flashcardDisplay(displayWords) {
-    console.log(displayWords);
+function loadFlashcard(displayWords) {
+    var wordNum = -1;
+
+//var questionNum = -1;
+//var numCorrect = 0;
+
+function loadWord() {
+    ++wordNum;
+    if (wordNum == displayWords.length) {
+        $("#nextWord").hide();
+        $("start").show();
+    } else {
+        document.getElementById("flashcard").innerHTML = displayWords[wordNum];
+    }
 }
+loadWord();
+
+
+document.getElementById("nextWord").addEventListener("click", function(e) {
+        loadWord();
+});
+}
+
+//Displaying words on flashcard
+//function firstFlashcard(displayWords) {
+  //  document.getElementById("flashcard").append(" " + displayWords[0]);
+    //nextFlashcard(displayWords);
+//}
+
+//async function nextFlashcard(displayWords) {
+  //  await $("#nextWord").click(function(){
+    //    for (var i=; i<displayWords.length; i++) {
+      //      document.getElementById("flashcard").remove(" " + displayWords[i-1])
+        //    document.getElementById("flashcard").append(" " + displayWords[i])
+         //  });
+    
+
+//}
+
+
+  //  for (var i=0; i<displayWords.length; i++) {
+    //    async function nextFlashcard() {
+
+      //  await $("#nextWord").click(function(){
+        //    document.getElementById("flashcard").remove(" " + displayWords[i-1])
+          //  document.getElementById("flashcard").append(" " + displayWords[i-1])
+            //});
+        //}
+        //if (i == (displayWords.length-1)) {
+          //  $("#nextWord").hide();
+            //$("start").show();
+        //} else {
+          //  $("#nextWord").show();
+        //}
+
+   // }
+    //console.log(displayWords);
+//}
