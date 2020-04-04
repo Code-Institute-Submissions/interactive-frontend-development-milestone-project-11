@@ -2,8 +2,6 @@ const sourceData = ["sliced", "searched", "jumped", "crashed", "creased", "dove"
 "tumbled", "oggled", "stretched"];
 console.log(sourceData);
 
-//var randWords = [];
-//var leftWords = sourceData.slice(0);
 
 //Get first three words & remove from array
 function getRandom() {
@@ -21,7 +19,6 @@ function getRandom() {
 }
 
 //Displaying words on flashcard
-function flashcardDisplay(newRandWords) {
-    var stuff = newRandWords;
-    console.log(newRandWords);
+function flashcardDisplay(displayWords) {
+    console.log(displayWords);
 }
