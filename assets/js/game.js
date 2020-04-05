@@ -60,17 +60,35 @@ function showGameboard() {
 //Displaying Words on Gameboard
 // Only show the number of words in the array
 // Use index number to get Id of element
-
 function startGameboard (displayWords) {
     for (var i=0; i<displayWords.length; i++) {
         var e = "";
         e += "word" + (i+1);
-        console.log(e);
         document.getElementById(e).style.display = "block";
     }
+    displayFirstForm(displayWords);
 }
 
+// Display Forms & Buttons
+function displayFirstForm (displayWords) {
+    $("#word1 > input").css("display", "inline");
+}
 
+function firstLogAndCheck () {
+    var x = 0;
+    var submitArray = Array();
+    logToArray(x, submitArray);
+}
+
+function logToArray(x, submitArray) {
+        submitArray[x] = document.getElementsByClassName("text").value;
+        console.log(submitArray[x]);
+        x++  
+        document.getElementsByClassName("text").value = "";
+        checkAnswer(submitArray, displayWords);
+    }
+
+function checkAnswer(submitArray, displayWords);
 
 /*
 // Populating Gameboard with Word numbers
