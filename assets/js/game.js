@@ -18,6 +18,11 @@ function getRandom() {
     loadFlashcard(randWords);
 }
 
+// Show Flashcards
+function showGame() {
+    document.getElementById("flashcard").style.display = "block";
+}
+
 //Displaying words on flashcard
 function loadFlashcard(displayWords) {
     console.log(displayWords);
@@ -26,11 +31,11 @@ function loadFlashcard(displayWords) {
     function loadWord() {
       
         if (wordNum == (displayWords.length-1)) {
-            document.getElementById("flashcard").innerHTML = displayWords[wordNum];
+            document.getElementById("flashcard1").innerHTML = displayWords[wordNum];
             $("#nextWord").hide();
             $("#start").show();
         } else {
-        document.getElementById("flashcard").innerHTML = displayWords[wordNum];
+        document.getElementById("flashcard1").innerHTML = displayWords[wordNum];
         ++wordNum;
         }
     }
@@ -40,9 +45,17 @@ function loadFlashcard(displayWords) {
         loadWord();
     });
 
+    // document.getElementById("start").addEventListener("click", function(e) {
+    //    showGameboard(displayWords);
+    //});
+
 }
 
-// Start Gameboard function
+// Show Gameboard function
+function showGameboard() {
+    document.getElementById("flashcard").style.display = "none";
+    document.getElementById("gameboard").style.display = "block";
+}
 
 // Inputting words function
 
