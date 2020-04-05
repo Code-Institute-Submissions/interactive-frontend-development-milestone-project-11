@@ -10,7 +10,7 @@ function getRandom() {
 
     for (var i=0; i<3; i++) {
         var rand = leftWords[Math.floor(Math.random() * leftWords.length)];
-        randWorks = randWords.push(rand);
+        randWords = randWords.push(rand);
         leftWords = leftWords.filter( ( el ) => !randWords.includes( el ) );
     }
     //console.log(randWords);
@@ -57,7 +57,11 @@ function showGameboard() {
     document.getElementById("gameboard").style.display = "block";
 }
 
-// Inputting words function
+// Populating Gameboard
+function startGameboard() {
+
+}
+
 
 // 
 
