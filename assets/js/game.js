@@ -57,7 +57,7 @@ function showGameboard() {
     document.getElementById("gameboard").style.display = "block";
 }
 
-// Populating Gameboard
+// Populating Gameboard with Word numbers
 function startGameboard(displayWords) {
     console.log(displayWords);
     var e = "";
@@ -65,6 +65,30 @@ function startGameboard(displayWords) {
      e += "<div id='wordSpace" + i + "'>" + " " + (i+1) + ". " + "</div>";
      document.getElementById("gameboard").innerHTML = e;          
     }
+    startForm(displayWords);
+}
+
+// Start first form
+function startForm(displayWords) {
+    var wordNum = 0;
+
+    function loadForm() {
+        var form = "";
+        var btn = "";
+        //if less than array length, generate the form and button
+        if (wordNum < displayWords.length) {
+             form += "<input type='text'" + "Text" + "</input>";
+             btn += "<input type='button' id='check-answer' value='Check'" + "Text" + "</input>";
+             ++wordNum;
+        } else {
+            alert("Something went wrong");
+        }
+    }
+    loadForm();
+
+    //document.getElementById("check-answer").addEventListener("click", function(e) {
+     //   loadForm();
+    //});
 }
 
 
