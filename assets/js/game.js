@@ -10,7 +10,7 @@ function getRandom() {
 
     for (var i=0; i<3; i++) {
         var rand = leftWords[Math.floor(Math.random() * leftWords.length)];
-        randWords = randWords.push(rand);
+        randWorks = randWords.push(rand);
         leftWords = leftWords.filter( ( el ) => !randWords.includes( el ) );
     }
     //console.log(randWords);
@@ -48,7 +48,7 @@ function loadFlashcard(displayWords) {
     // document.getElementById("start").addEventListener("click", function(e) {
     //    showGameboard(displayWords);
     //});
-
+    startGameboard(displayWords);
 }
 
 // Show Gameboard function
@@ -58,8 +58,13 @@ function showGameboard() {
 }
 
 // Populating Gameboard
-function startGameboard() {
-
+function startGameboard(displayWords) {
+    console.log(displayWords);
+    var e = "";
+    for (var i=0; i<displayWords.length; i++) {
+     e += "<div id='wordSpace" + i + "'>" + " " + (i+1) + ". " + "</div>";
+     document.getElementById("gameboard").innerHTML = e;          
+    }
 }
 
 
