@@ -14,7 +14,6 @@ function getRandom() {
         randWorks = randWords.push(rand);
         leftWords = leftWords.filter( ( el ) => !randWords.includes( el ) );
     }
-    //console.log(randWords);
     console.log(leftWords);
     loadFlashcard(randWords);
 }
@@ -46,9 +45,6 @@ function loadFlashcard(displayWords) {
         loadWord();
     });
 
-    // document.getElementById("start").addEventListener("click", function(e) {
-    //    showGameboard(displayWords);
-    //});
    startGameboard(displayWords);
 }
 
@@ -87,14 +83,11 @@ function displayFirstForm (displayWords) {
 function firstLogAndCheck (displayWords) {
     var x = -1;
     var submitArray = [];
-    //console.log(submitArray);
-    //console.log(x);
     logToArray(x, submitArray, displayWords);
 }
 
 function logToArray(x, submitArray, displayWords) {
     x++;
-    //console.log(submitArray);
     console.log(x);
     var e = "";
     e += "text" + (x+1);
@@ -106,9 +99,6 @@ function logToArray(x, submitArray, displayWords) {
     }
 
 function checkAnswer(x, submitArray, displayWords) {
-    //console.log(displayWords);
-    //console.log(submitArray);
-    //for (var i=0; i<submitArray.length; i++) {
         var submitArrayx = submitArray[x];
         var displayWordsx = displayWords[x];
         if (submitArrayx == displayWordsx) {
@@ -121,7 +111,6 @@ function checkAnswer(x, submitArray, displayWords) {
         } else {
            console.log("That is incorrect");
         }
-   // }
 }
 
 function displayNextForm(x, submitArray, displayWords) {
@@ -146,7 +135,7 @@ function displayNextForm(x, submitArray, displayWords) {
         });
     } else {
         console.log('clicking not working');
-}
+    }
 }
 
 
