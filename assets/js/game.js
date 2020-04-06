@@ -2,6 +2,7 @@ const sourceData = ["sliced", "searched", "jumped", "crashed", "creased", "dove"
 "tumbled", "stretched"];
 console.log(sourceData);
 
+var displayWords;
 
 //Get first three words & remove from array
 function getRandom() {
@@ -67,28 +68,58 @@ function startGameboard (displayWords) {
         document.getElementById(e).style.display = "block";
     }
     displayFirstForm(displayWords);
+
 }
 
 // Display Forms & Buttons
 function displayFirstForm (displayWords) {
     $("#word1 > input").css("display", "inline");
+
+    if($('#check-answer1')) {
+    $('#check-answer1').click(function() {
+    firstLogAndCheck(displayWords);
+    });
+    } else {
+    console.log('clicking not working');
+}
 }
 
-function firstLogAndCheck () {
+function firstLogAndCheck (displayWords) {
     var x = 0;
-    var submitArray = Array();
-    logToArray(x, submitArray);
+    var submitArray = [];
+    //console.log(submitArray);
+    //console.log(x);
+    logToArray(x, submitArray, displayWords);
 }
 
-function logToArray(x, submitArray) {
-        submitArray[x] = document.getElementsByClassName("text").value;
-        console.log(submitArray[x]);
-        x++  
-        document.getElementsByClassName("text").value = "";
-        checkAnswer(submitArray, displayWords);
+function logToArray(x, submitArray, displayWords) {
+    console.log(submitArray);
+    console.log(x);
+    var e = "";
+    e += "text" + (x+1);
+    submitArray[x] = document.getElementById(e).value;
+    console.log(submitArray);
+    checkAnswer(submitArray, displayWords);
+    x++;
     }
 
-function checkAnswer(submitArray, displayWords);
+function waiting(displayWords){
+    console.log(displayWords);
+    console.log("Done");
+    checkAnswer(displayWords);}
+
+function checkAnswer(submitArray, displayWords) {
+    console.log(displayWords);
+    console.log(submitArray);
+    for (var i=0; i<submitArray.length; i++) {
+        if (submitArray[i] === displayWords[i]) {
+            console.log("Correct!");
+        } else {
+            console.log("That is incorrect");
+        }
+    }
+}
+
 
 /*
 // Populating Gameboard with Word numbers
