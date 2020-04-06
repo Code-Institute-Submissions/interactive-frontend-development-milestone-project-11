@@ -94,7 +94,7 @@ function firstLogAndCheck (displayWords) {
 
 function logToArray(x, submitArray, displayWords) {
     x++;
-    console.log(submitArray);
+    //console.log(submitArray);
     console.log(x);
     var e = "";
     e += "text" + (x+1);
@@ -102,18 +102,24 @@ function logToArray(x, submitArray, displayWords) {
     console.log(submitArray);
     console.log("logToArray x=" + x);
     checkAnswer(x, submitArray, displayWords);
+    console.log("logToArrayAgain x=" + x);
     }
 
 function checkAnswer(x, submitArray, displayWords) {
-    console.log(displayWords);
-    console.log(submitArray);
+    //console.log(displayWords);
+    //console.log(submitArray);
     //for (var i=0; i<submitArray.length; i++) {
-        if (submitArray[x] === displayWords[x]) {
+        var submitArrayx = submitArray[x];
+        var displayWordsx = displayWords[x];
+        if (submitArrayx == displayWordsx) {
+            console.log("checkAnswer x=" + x);
+            console.log(submitArrayx);
+            console.log(displayWordsx);
             console.log("Correct!");
             displayNextForm(x, submitArray, displayWords);
-            console.log("checkAnswer x=" + x);
+            console.log("After displayNextForm is triggered");
         } else {
-            console.log("That is incorrect");
+           console.log("That is incorrect");
         }
    // }
 }
@@ -128,22 +134,21 @@ function displayNextForm(x, submitArray, displayWords) {
     $(b).css("display", "none");
     var nextForm = "#" + "text" + (x+2);
     var nextButton = "#" + "check-answer" + (x+2);
+    console.log(nextForm);
+    console.log(nextButton);
     $(nextForm).css("display", "inline");
     $(nextButton).css("display", "inline");
 
     if($(nextButton)) {
-    $(nextButton).click(function() {
-    nextLogAndCheck(x, submitArray, displayWords);
-    });
+        $(nextButton).click(function() {
+            logToArray(x, submitArray, displayWords);
+            console.log("nextButton x=" +x);
+        });
     } else {
-    console.log('clicking not working');
+        console.log('clicking not working');
 }
 }
 
-function nextLogAndCheck(x, submitArray, displayWords) {
-    logToArray(x, submitArray, displayWords);
-    checkAnswer(x, submitArray, displayWords);
-}
 
 
 
