@@ -85,7 +85,7 @@ function displayFirstForm (displayWords) {
 }
 
 function firstLogAndCheck (displayWords) {
-    var x = 0;
+    var x = -1;
     var submitArray = [];
     //console.log(submitArray);
     //console.log(x);
@@ -93,38 +93,41 @@ function firstLogAndCheck (displayWords) {
 }
 
 function logToArray(x, submitArray, displayWords) {
+    x++;
     console.log(submitArray);
     console.log(x);
     var e = "";
     e += "text" + (x+1);
     submitArray[x] = document.getElementById(e).value;
     console.log(submitArray);
-    x++;
+    console.log("logToArray x=" + x);
     checkAnswer(x, submitArray, displayWords);
     }
 
 function checkAnswer(x, submitArray, displayWords) {
     console.log(displayWords);
     console.log(submitArray);
-    for (var i=0; i<submitArray.length; i++) {
-        if (submitArray[i] === displayWords[i]) {
+    //for (var i=0; i<submitArray.length; i++) {
+        if (submitArray[x] === displayWords[x]) {
             console.log("Correct!");
             displayNextForm(x, submitArray, displayWords);
+            console.log("checkAnswer x=" + x);
         } else {
             console.log("That is incorrect");
         }
-    }
+   // }
 }
 
 function displayNextForm(x, submitArray, displayWords) {
-    var f = "#" + "text" + x;
-    var b = "#" + "check-answer" + x;
+    console.log("displayNextForm x=" + x);
+    var f = "#" + "text" + (x+1);
+    var b = "#" + "check-answer" + (x+1);
     console.log(f);
     console.log(b);
     $(f).css("display", "none");
     $(b).css("display", "none");
-    var nextForm = "#" + "text" + (x+1);
-    var nextButton = "#" + "check-answer" + (x+1);
+    var nextForm = "#" + "text" + (x+2);
+    var nextButton = "#" + "check-answer" + (x+2);
     $(nextForm).css("display", "inline");
     $(nextButton).css("display", "inline");
 
