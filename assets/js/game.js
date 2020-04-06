@@ -99,26 +99,49 @@ function logToArray(x, submitArray, displayWords) {
     e += "text" + (x+1);
     submitArray[x] = document.getElementById(e).value;
     console.log(submitArray);
-    checkAnswer(submitArray, displayWords);
     x++;
+    checkAnswer(x, submitArray, displayWords);
     }
 
-function waiting(displayWords){
-    console.log(displayWords);
-    console.log("Done");
-    checkAnswer(displayWords);}
-
-function checkAnswer(submitArray, displayWords) {
+function checkAnswer(x, submitArray, displayWords) {
     console.log(displayWords);
     console.log(submitArray);
     for (var i=0; i<submitArray.length; i++) {
         if (submitArray[i] === displayWords[i]) {
             console.log("Correct!");
+            displayNextForm(x, submitArray, displayWords);
         } else {
             console.log("That is incorrect");
         }
     }
 }
+
+function displayNextForm(x, submitArray, displayWords) {
+    var f = "#" + "text" + x;
+    var b = "#" + "check-answer" + x;
+    console.log(f);
+    console.log(b);
+    $(f).css("display", "none");
+    $(b).css("display", "none");
+    var nextForm = "#" + "text" + (x+1);
+    var nextButton = "#" + "check-answer" + (x+1);
+    $(nextForm).css("display", "inline");
+    $(nextButton).css("display", "inline");
+
+    if($(nextButton)) {
+    $(nextButton).click(function() {
+    nextLogAndCheck(x, submitArray, displayWords);
+    });
+    } else {
+    console.log('clicking not working');
+}
+}
+
+function nextLogAndCheck(x, submitArray, displayWords) {
+    logToArray(x, submitArray, displayWords);
+    checkAnswer(x, submitArray, displayWords);
+}
+
 
 
 /*
