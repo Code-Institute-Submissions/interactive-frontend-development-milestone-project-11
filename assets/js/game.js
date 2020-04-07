@@ -67,7 +67,7 @@ function getRandom() {
 }
 
 // Show Flashcards
-function showGame() {
+function showFlashcards() {
     document.getElementById("flashcard").style.display = "block";
 }
 
@@ -75,18 +75,35 @@ function showGame() {
 function loadFlashcard(displayWords) {
     console.log(displayWords);
     var wordNum = 0;
+    $("#nextWord").show();
+    $("#start").hide();
+
+    function loadFirstWord() {
+        var wordNum = 0;
+        console.log("wordNum for Loadfirst=" + wordNum);
+        document.getElementById("flashcard1").innerHTML = displayWords[wordNum];
+    }
+    loadFirstWord();
 
     function loadWord() {
+        console.log(displayWords);
         if (wordNum == (displayWords.length-1)) {
+            console.log("wordNum compared to length =" + wordNum);
+            console.log("Length com to wordNum=" + displayWords.length);
             document.getElementById("flashcard1").innerHTML = displayWords[wordNum];
             $("#nextWord").hide();
             $("#start").show();
+            wordNum = 0;
         } else {
+        console.log("Length=" + displayWords.length);
         document.getElementById("flashcard1").innerHTML = displayWords[wordNum];
-        ++wordNum;
+        console.log("Before iteration:" + displayWords[wordNum]);
+        wordNum++;
+        console.log("wordNum =" + wordNum);
+        console.log("After iteration:" + displayWords[wordNum]);
         }
     }
-    loadWord();
+    //loadWord();
 
     document.getElementById("nextWord").addEventListener("click", function(e) {
         loadWord();
@@ -129,36 +146,37 @@ function displayFirstForm (displayWords) {
 // Set variables for first input log
 function firstLogAndCheck (displayWords) {
     var x = -1;
-    var submitArray = [];
-    logToArray(x, submitArray, displayWords);
+    var submitAns;
+    logToArray(x, submitAns, displayWords);
 }
 
 // Log form input to array
-function logToArray(x, submitArray, displayWords) {
+function logToArray(x, submitAns, displayWords) {
+    console.log("log to array after nextcheck x=" + x);
     x++;
     console.log(x);
     var e = "";
     e += "text" + (x+1);
-    submitArray[x] = document.getElementById(e).value;
-    console.log(submitArray);
-    console.log("logToArray x=" + x);
-    checkAnswer(x, submitArray, displayWords);
-    console.log("logToArrayAgain x=" + x);
+    submitAns = document.getElementById(e).value;
+    console.log(submitAns);
+    console.log("logToAns x=" + x);
+    checkAnswer(x, submitAns, displayWords);
+    console.log("logToAnsAgain x=" + x);
     }
 
 // Compare submitted word to answer
-function checkAnswer(x, submitArray, displayWords) {
-        var submitArrayx = submitArray[x];
+function checkAnswer(x, submitAns, displayWords) {
+        //var submitArrayx = submitArray[x];
         var displayWordsx = displayWords[x];
-        if (submitArrayx == displayWordsx) {
+        if (submitAns == displayWordsx) {
             console.log("checkAnswer x=" + x);
-            console.log(submitArrayx);
+            console.log(submitAns);
             console.log(displayWordsx);
             console.log("Correct!");
             scoreUp();
 
-            if (submitArray.length < displayWords.length) {
-                displayNextForm(x, submitArray, displayWords);
+            if (x < (displayWords.length-1)) {
+                displayNextForm(x, submitAns, displayWords);
                 console.log("After displayNextForm is triggered");
             } else {
                 clearLastForm(x);
@@ -173,25 +191,25 @@ function checkAnswer(x, submitArray, displayWords) {
 }
 
 // Display next form
-function displayNextForm(x, submitArray, displayWords) {
+function displayNextForm(x, submitAns, displayWords) {
     console.log("displayNextForm x=" + x);
     var f = "#" + "text" + (x+1);
     var b = "#" + "check-answer" + (x+1);
-    console.log(f);
-    console.log(b);
+    //console.log(f);
+    //console.log(b);
     $(f).css("display", "none");
     $(b).css("display", "none");
     var nextForm = "#" + "text" + (x+2);
-    var nextButton = "#" + "check-answer" + (x+2);
-    console.log(nextForm);
-    console.log(nextButton);
+    var nextCheckButton = "#" + "check-answer" + (x+2);
+    //console.log(nextForm);
+    console.log(nextCheckButton);
     $(nextForm).css("display", "inline");
-    $(nextButton).css("display", "inline");
+    $(nextCheckButton).css("display", "inline");
 
-    if($(nextButton)) {
-        $(nextButton).click(function() {
-            logToArray(x, submitArray, displayWords);
-            console.log("nextButton x=" +x);
+    if($(nextCheckButton)) {
+        $(nextCheckButton).click(function() {
+            logToArray(x, submitAns, displayWords);
+            console.log("nextCheckButton x=" +x);
         });
     } else {
         console.log('clicking not working');
@@ -202,8 +220,8 @@ function clearLastForm(x) {
     console.log("clearLastForm x=" + x);
     var f = "#" + "text" + (x+1);
     var b = "#" + "check-answer" + (x+1);
-    console.log(f);
-    console.log(b);
+    //console.log(f);
+    //console.log(b);
     $(f).css("display", "none");
     $(b).css("display", "none");
     //clearFormEntries(x);
@@ -230,7 +248,8 @@ function addToDisplayWords(displayWords) {
 }
 
 function hideGameboard() {
-    
+    document.getElementById("gameboard").style.display = "none";
+    showFlashcards();
 }
 /*
 var oldNumOfWords = sessionStorage.getItem("numOfWords");
