@@ -9,15 +9,12 @@ function setLevelRound() {
     var level = 0;
     var round = 0;
     var score = 0;
-    var numOfWords = 1;
 
     sessionStorage.setItem("level", level);
     sessionStorage.setItem("round", round);
     sessionStorage.setItem("score", score);
-    sessionStorage.setItem("numOfWords", numOfWords);
 
     document.getElementById("score").innerHTML = sessionStorage.getItem("score");
-    console.log("Set numOfWords:" + numOfWords);
     levelUp();
     roundUp();
     getRandom();
@@ -31,6 +28,7 @@ function levelUp() {
     console.log("New Level:" + level);
     sessionStorage.setItem("level", level);
     document.getElementById("level").innerHTML = sessionStorage.getItem("level");
+    
 }
 
 //Increase Round
@@ -59,14 +57,7 @@ function getRandom() {
     var randWords = [];
     var leftWords = sourceData.slice(0);
 
-    var oldNumOfWords = sessionStorage.getItem("numOfWords");
-    console.log("Old numOfWords:" + oldNumOfWords);
-    var numOfWords = parseInt(oldNumOfWords) + 2;
-    sessionStorage.setItem("numOfWords", numOfWords);
-    console.log("Old numOfWords:" + numOfWords);
-    console.log("New numOfWords:" + numOfWords);
-
-    for (var i=0; i<numOfWords; i++) {
+    for (var i=0; i<3; i++) {
         var rand = leftWords[Math.floor(Math.random() * leftWords.length)];
         randWorks = randWords.push(rand);
         leftWords = leftWords.filter( ( el ) => !randWords.includes( el ) );
@@ -86,7 +77,6 @@ function loadFlashcard(displayWords) {
     var wordNum = 0;
 
     function loadWord() {
-      
         if (wordNum == (displayWords.length-1)) {
             document.getElementById("flashcard1").innerHTML = displayWords[wordNum];
             $("#nextWord").hide();
@@ -136,12 +126,14 @@ function displayFirstForm (displayWords) {
 }
 }
 
+// Set variables for first input log
 function firstLogAndCheck (displayWords) {
     var x = -1;
     var submitArray = [];
     logToArray(x, submitArray, displayWords);
 }
 
+// Log form input to array
 function logToArray(x, submitArray, displayWords) {
     x++;
     console.log(x);
@@ -154,6 +146,7 @@ function logToArray(x, submitArray, displayWords) {
     console.log("logToArrayAgain x=" + x);
     }
 
+// Compare submitted word to answer
 function checkAnswer(x, submitArray, displayWords) {
         var submitArrayx = submitArray[x];
         var displayWordsx = displayWords[x];
@@ -163,13 +156,23 @@ function checkAnswer(x, submitArray, displayWords) {
             console.log(displayWordsx);
             console.log("Correct!");
             scoreUp();
-            displayNextForm(x, submitArray, displayWords);
-            console.log("After displayNextForm is triggered");
+
+            if (submitArray.length < displayWords.length) {
+                displayNextForm(x, submitArray, displayWords);
+                console.log("After displayNextForm is triggered");
+            } else {
+                clearLastForm(x);
+                hideGameboard();
+                levelUp();
+                addToDisplayWords(displayWords);
+            }
+            
         } else {
            console.log("That is incorrect");
         }
 }
 
+// Display next form
 function displayNextForm(x, submitArray, displayWords) {
     console.log("displayNextForm x=" + x);
     var f = "#" + "text" + (x+1);
@@ -194,3 +197,46 @@ function displayNextForm(x, submitArray, displayWords) {
         console.log('clicking not working');
     }
 }
+
+function clearLastForm(x) {
+    console.log("clearLastForm x=" + x);
+    var f = "#" + "text" + (x+1);
+    var b = "#" + "check-answer" + (x+1);
+    console.log(f);
+    console.log(b);
+    $(f).css("display", "none");
+    $(b).css("display", "none");
+    //clearFormEntries(x);
+}
+
+function clearFormEntries(x) {
+    for (var i=1; i<=(x+1); i++){
+        var f = "#" + "text" + i;
+        document.getElementById(f).value = " ";
+    }
+}
+
+function addToDisplayWords(displayWords) {
+    var randWords = displayWords;
+    var leftWords = sourceData.filter( ( el ) => !randWords.includes( el ) );
+
+    for (var i=0; i<2; i++) {
+        var rand = leftWords[Math.floor(Math.random() * leftWords.length)];
+        randWorks = randWords.push(rand);
+        leftWords = leftWords.filter( ( el ) => !randWords.includes( el ) );
+    }
+    console.log(leftWords);
+    loadFlashcard(randWords);
+}
+
+function hideGameboard() {
+    
+}
+/*
+var oldNumOfWords = sessionStorage.getItem("numOfWords");
+    console.log("Old numOfWords:" + oldNumOfWords);
+    var numOfWords = parseInt(oldNumOfWords) + 2;
+    sessionStorage.setItem("numOfWords", numOfWords);
+    console.log("Old numOfWords:" + numOfWords);
+    console.log("New numOfWords:" + numOfWords);
+    */
