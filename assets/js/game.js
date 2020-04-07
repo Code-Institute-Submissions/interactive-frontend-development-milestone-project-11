@@ -199,7 +199,9 @@ function checkAnswer(x, submitAns, displayWords) {
                 clearLastForm(x);
                 hideGameboard();
                 levelUp();
-                addToDisplayWords(displayWords);
+                //Checking 
+                getRandom();
+                //addToDisplayWords(displayWords);
                 return;
             }
             
