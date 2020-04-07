@@ -111,7 +111,6 @@ function startGameboard (displayWords) {
         document.getElementById(e).style.display = "block";
     }
     displayFirstForm(displayWords);
-
 }
 
 // Display Forms & Buttons
