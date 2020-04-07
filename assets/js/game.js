@@ -2,6 +2,10 @@ const sourceData = ["sliced", "searched", "jumped", "crashed", "creased", "dove"
 "tumbled", "stretched"];
 console.log(sourceData);
 
+//Set Level and Round
+function setLevelRound(){
+    sessionStorage.setItem("level")
+}
 
 //Get first three words & remove from array
 function getRandom() {

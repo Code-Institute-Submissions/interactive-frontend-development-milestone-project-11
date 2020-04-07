@@ -8,7 +8,7 @@
     <!--<link rel = "stylesheet" type = "text/css" href = "assets/css/style.css" />-->
 </head>
 <body>
-    <button id="firstPlay" onclick="getRandom(), showGame()">Play</button>
+    <button id="firstPlay" onclick="getRandom(), showGame(), setLevelRound()">Play</button>
     <div id="flashcard" style="border: 1px solid blue; display: none">
         <h3>Remember:</h3>
         <div id="flashcard1">Flashcard Word:</div>
@@ -16,9 +16,9 @@
         <button id="start" onclick="showGameboard()" style="display:none">Start</button>
     </div>
     <div id="gameboard" style="border: 5px solid red; display: none">
-        <div id="score">Score:</div>
-        <div id="level">Level:</div>
-        <div id="round">Round:</div>
+        <div>Score: <span id="score"></span></div>
+        <div>Level: <span id="level"></span></div>
+        <div>Round: <span id="round"></span></div>
         <div id="timer">Timer:</div>
         <div id="wordList">
         <h2>Word List:</h2>
