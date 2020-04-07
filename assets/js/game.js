@@ -18,6 +18,7 @@ function setLevelRound() {
     levelUp();
     roundUp();
     getRandom();
+    return;
 }
 
 //Increase Level
@@ -28,7 +29,7 @@ function levelUp() {
     console.log("New Level:" + level);
     sessionStorage.setItem("level", level);
     document.getElementById("level").innerHTML = sessionStorage.getItem("level");
-    
+    return;
 }
 
 //Increase Round
@@ -39,6 +40,7 @@ function roundUp() {
     console.log("New Round:" + round);
     sessionStorage.setItem("round", round);
     document.getElementById("round").innerHTML = sessionStorage.getItem("round");
+    return;
 }
 
 //Increase Score
@@ -49,6 +51,7 @@ function scoreUp() {
     console.log("New Score:" + score);
     sessionStorage.setItem("score", score);
     document.getElementById("score").innerHTML = sessionStorage.getItem("score");
+    return;
 }
 
 
@@ -64,11 +67,14 @@ function getRandom() {
     }
     console.log(leftWords);
     loadFlashcard(randWords);
+    return leftWords;
+    return randWords;
 }
 
 // Show Flashcards
 function showFlashcards() {
     document.getElementById("flashcard").style.display = "block";
+    return;
 }
 
 //Displaying words on flashcard
@@ -82,6 +88,7 @@ function loadFlashcard(displayWords) {
         var wordNum = 0;
         console.log("wordNum for Loadfirst=" + wordNum);
         document.getElementById("flashcard1").innerHTML = displayWords[wordNum];
+        return;
     }
     loadFirstWord();
 
@@ -94,6 +101,7 @@ function loadFlashcard(displayWords) {
             $("#nextWord").hide();
             $("#start").show();
             wordNum = 0;
+            return;
         } else {
         console.log("Length=" + displayWords.length);
         document.getElementById("flashcard1").innerHTML = displayWords[wordNum];
@@ -101,21 +109,25 @@ function loadFlashcard(displayWords) {
         wordNum++;
         console.log("wordNum =" + wordNum);
         console.log("After iteration:" + displayWords[wordNum]);
+        return;
         }
     }
     //loadWord();
 
     document.getElementById("nextWord").addEventListener("click", function(e) {
         loadWord();
+        return;
     });
 
    startGameboard(displayWords);
+   return;
 }
 
 // Show Gameboard function
 function showGameboard() {
     document.getElementById("flashcard").style.display = "none";
     document.getElementById("gameboard").style.display = "block";
+    return;
 }
 
 //Displaying Words on Gameboard
@@ -128,6 +140,7 @@ function startGameboard (displayWords) {
         document.getElementById(e).style.display = "block";
     }
     displayFirstForm(displayWords);
+    return;
 }
 
 // Display Forms & Buttons
@@ -137,9 +150,11 @@ function displayFirstForm (displayWords) {
     if($('#check-answer1')) {
     $('#check-answer1').click(function() {
     firstLogAndCheck(displayWords);
+    return;
     });
     } else {
     console.log('clicking not working');
+    return;
 }
 }
 
@@ -148,6 +163,7 @@ function firstLogAndCheck (displayWords) {
     var x = -1;
     var submitAns;
     logToArray(x, submitAns, displayWords);
+    return;
 }
 
 // Log form input to array
@@ -162,6 +178,7 @@ function logToArray(x, submitAns, displayWords) {
     console.log("logToAns x=" + x);
     checkAnswer(x, submitAns, displayWords);
     console.log("logToAnsAgain x=" + x);
+    return;
     }
 
 // Compare submitted word to answer
@@ -183,11 +200,13 @@ function checkAnswer(x, submitAns, displayWords) {
                 hideGameboard();
                 levelUp();
                 addToDisplayWords(displayWords);
+                return;
             }
             
         } else {
            console.log("That is incorrect");
-        }
+        return;}
+        return;
 }
 
 // Display next form
@@ -210,9 +229,11 @@ function displayNextForm(x, submitAns, displayWords) {
         $(nextCheckButton).click(function() {
             logToArray(x, submitAns, displayWords);
             console.log("nextCheckButton x=" +x);
+            return;
         });
     } else {
         console.log('clicking not working');
+        return;
     }
 }
 
@@ -225,12 +246,14 @@ function clearLastForm(x) {
     $(f).css("display", "none");
     $(b).css("display", "none");
     //clearFormEntries(x);
+    return;
 }
 
 function clearFormEntries(x) {
     for (var i=1; i<=(x+1); i++){
         var f = "#" + "text" + i;
         document.getElementById(f).value = " ";
+        return;
     }
 }
 
@@ -245,11 +268,13 @@ function addToDisplayWords(displayWords) {
     }
     console.log(leftWords);
     loadFlashcard(randWords);
+    return;
 }
 
 function hideGameboard() {
     document.getElementById("gameboard").style.display = "none";
     showFlashcards();
+    return;
 }
 /*
 var oldNumOfWords = sessionStorage.getItem("numOfWords");
