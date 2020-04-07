@@ -12,7 +12,7 @@
     <div id="flashcard" style="border: 1px solid blue; display: none">
         <h3>Remember:</h3>
         <div id="flashcard1">Flashcard Word:</div>
-        <button id="nextWord">Next</button>
+        <button id="nextWord" onclick="loadWord()">Next</button>
         <button id="start" onclick="showGameboard()" style="display:none">Start</button>
     </div>
     <div id="gameboard" style="border: 5px solid red; display: none">
@@ -25,12 +25,12 @@
         <div id="word1" class="word" style="display:none">
         1.
         <input type="text" style="display:none" id="text1"></input>
-        <input type="button" class="check-answer" id="check-answer1" value="Check" onclick ="" style="display:none"></input>
+        <input type="button" class="check-answer" id="check-answer1" value="Check" onclick ="checkAnswer()" style="display:none"></input>
         </div>
         <div id="word2" class="word" style="display:none">
         2.
         <input type="text" style="display:none" id="text2"></input>
-        <input type="button" class="check-answer" id="check-answer2" value="Check" onclick ="" style="display:none"></input>
+        <input type="button" class="check-answer" id="check-answer2" value="Check" onclick ="checkAnswer()" style="display:none"></input>
         </div>
         <div id="word3" class="word" style="display:none">
         3.
