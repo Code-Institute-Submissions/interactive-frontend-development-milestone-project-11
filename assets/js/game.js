@@ -9,15 +9,18 @@ function setLevelRound() {
     var level = 0;
     var round = 0;
     var score = 0;
+    var numOfWords = 1;
 
     sessionStorage.setItem("level", level);
     sessionStorage.setItem("round", round);
     sessionStorage.setItem("score", score);
+    sessionStorage.setItem("numOfWords", numOfWords);
 
     document.getElementById("score").innerHTML = sessionStorage.getItem("score");
-
+    console.log("Set numOfWords:" + numOfWords);
     levelUp();
     roundUp();
+    getRandom();
 }
 
 //Increase Level
@@ -56,7 +59,14 @@ function getRandom() {
     var randWords = [];
     var leftWords = sourceData.slice(0);
 
-    for (var i=0; i<3; i++) {
+    var oldNumOfWords = sessionStorage.getItem("numOfWords");
+    console.log("Old numOfWords:" + oldNumOfWords);
+    var numOfWords = parseInt(oldNumOfWords) + 2;
+    sessionStorage.setItem("numOfWords", numOfWords);
+    console.log("Old numOfWords:" + numOfWords);
+    console.log("New numOfWords:" + numOfWords);
+
+    for (var i=0; i<numOfWords; i++) {
         var rand = leftWords[Math.floor(Math.random() * leftWords.length)];
         randWorks = randWords.push(rand);
         leftWords = leftWords.filter( ( el ) => !randWords.includes( el ) );
@@ -184,48 +194,3 @@ function displayNextForm(x, submitArray, displayWords) {
         console.log('clicking not working');
     }
 }
-
-
-
-
-/*
-// Populating Gameboard with Word numbers
-function startGameboard(displayWords) {
-    console.log(displayWords);
-    var e = "";
-    for (var i=0; i<displayWords.length; i++) {
-     e += "<div id='wordSpace" + i + "'>" + " " + (i+1) + ". " + "</div>";
-     document.getElementById("gameboard").innerHTML = e;          
-    }
-    startForm(displayWords);
-}
-
-// Start first form
-function startForm(displayWords) {
-    var wordNum = 0;
-
-    function loadForm() {
-        var form = "";
-        var btn = "";
-        //if less than array length, generate the form and button
-        if (wordNum < displayWords.length) {
-             form += "<input type='text'>" + "Text" + "</input>";
-             btn += "<input type='button' id='check-answer' value='Check'>" + "Text" + "</input>";
-             ++wordNum;
-        } else {
-            alert("Something went wrong");
-        }
-    }
-    loadForm();
-
-    //document.getElementById("check-answer").addEventListener("click", function(e) {
-     //   loadForm();
-    //});
-}
-*/
-
-// 
-
-// Level function
-
-// Round
