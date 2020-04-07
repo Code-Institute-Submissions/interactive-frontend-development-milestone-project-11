@@ -4,6 +4,53 @@ console.log(sourceData);
 
 var displayWords;
 
+//Set level and round
+function setLevelRound() {
+    var level = 0;
+    var round = 0;
+    var score = 0;
+
+    sessionStorage.setItem("level", level);
+    sessionStorage.setItem("round", round);
+    sessionStorage.setItem("score", score);
+
+    document.getElementById("score").innerHTML = sessionStorage.getItem("score");
+
+    levelUp();
+    roundUp();
+}
+
+//Increase Level
+function levelUp() {
+    var level = sessionStorage.getItem("level");
+    console.log("Old Level:" + level);
+    level++;
+    console.log("New Level:" + level);
+    sessionStorage.setItem("level", level);
+    document.getElementById("level").innerHTML = sessionStorage.getItem("level");
+}
+
+//Increase Round
+function roundUp() {
+    var round = sessionStorage.getItem("round");
+    console.log("Old Round:" + round);
+    round++;
+    console.log("New Round:" + round);
+    sessionStorage.setItem("round", round);
+    document.getElementById("round").innerHTML = sessionStorage.getItem("round");
+}
+
+//Increase Score
+function scoreUp() {
+    var oldScore = sessionStorage.getItem("score");
+    console.log("Old Score:" + oldScore);
+    var score = parseInt(oldScore) + 10;
+    console.log("New Score:" + score);
+    sessionStorage.setItem("score", score);
+    document.getElementById("score").innerHTML = sessionStorage.getItem("score");
+}
+
+
 //Get first three words & remove from array
 function getRandom() {
     var randWords = [];
@@ -106,6 +153,7 @@ function checkAnswer(x, submitArray, displayWords) {
             console.log(submitArrayx);
             console.log(displayWordsx);
             console.log("Correct!");
+            scoreUp();
             displayNextForm(x, submitArray, displayWords);
             console.log("After displayNextForm is triggered");
         } else {
