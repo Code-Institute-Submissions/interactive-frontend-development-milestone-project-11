@@ -14,10 +14,15 @@ function generateWords() {
     console.log(leftWords);
 }
 
+function startGame() {
+    setLevelRound();
+    showFlashcards();
+}
+
 function setLevelRound() {
-    var level = 1;
-    var round = 1;
-    var score = 0;
+    let level = 1;
+    let round = 1;
+    let score = 0;
 
     sessionStorage.setItem("level", level);
     sessionStorage.setItem("round", round);
@@ -28,24 +33,40 @@ function setLevelRound() {
     document.getElementById("score").innerHTML = sessionStorage.getItem("score");
 }
 
-//Increase Level
-function levelUp() {
-    var level = sessionStorage.getItem("level");
-    console.log("Old Level:" + level);
-    level++;
-    console.log("New Level:" + level);
-    sessionStorage.setItem("level", level);
-    document.getElementById("level").innerHTML = sessionStorage.getItem("level");
-    return;
+class FlashCards {
+    constructor(words) {
+        this.words = words;
+        this.currentWordIndex = 0;
+        this.level = parseInt(sessionStorage.getItem("level"));
+        this.lastWordIndex = (this.level*2);
+    }
+
+    displayCurrentWord() {
+    console.info(this.words[this.currentWordIndex]);
+    return this.words[this.currentWordIndex];
+    }
+
+    incrementWordIndex() {
+  	this.currentWordIndex = this.currentWordIndex + 1;
+    }
+
 }
 
-//Increase Round
-function roundUp() {
-    var round = sessionStorage.getItem("round");
-    console.log("Old Round:" + round);
-    round++;
-    console.log("New Round:" + round);
-    sessionStorage.setItem("round", round);
-    document.getElementById("round").innerHTML = sessionStorage.getItem("round");
-    return;
+function showFlashcards(){
+    flashcard = new FlashCards(words);
+    console.log(flashcard);
+    document.getElementById("flashcard").style.display = "block";
+    document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
+}
+
+function nextFlashCard(){
+    if (flashcard.currentWordIndex < flashcard.lastWordIndex-1){
+        flashcard.incrementWordIndex();
+        document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
+    } else {
+        flashcard.incrementWordIndex();
+        document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
+        $("#nextWord").hide();
+        $("#start").show();
+    }
 }

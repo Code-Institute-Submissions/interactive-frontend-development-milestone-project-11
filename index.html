@@ -9,8 +9,47 @@
 </head>
 <body>
 
-    <button id="" onclick="generateWords()">New Game</button>
+    <button id="" onclick="generateWords(), startGame()">New Game</button>
+    
+    <div id="flashcard" style="border: 1px solid blue; display: none">
+        <h3>Remember:</h3>
+        <div id="flashcard1">Flashcard Word:</div>
+        <button id="nextWord" onclick="nextFlashCard()">Next</button>
+        <button id="start" onclick="showGameboard()" style="display:none">Start</button>
+    </div>
 
+    <div id="gameboard" style="border: 5px solid red; display: none">
+        <div>Score: <span id="score"></span></div>
+        <div>Level: <span id="level"></span></div>
+        <div>Round: <span id="round"></span></div>
+        <div id="wordList">
+        <h2>Word List:</h2>
+        
+        <div id="word1" class="word" style="display:none">
+        1.
+        <input type="text" style="display:none" id="text1"></input>
+        <input type="button" class="check-answer" id="check-answer1" value="Check" onclick ="" style="display:none"></input>
+        </div>
+        <div id="word2" class="word" style="display:none">
+        2.
+        <input type="text" style="display:none" id="text2"></input>
+        <input type="button" class="check-answer" id="check-answer2" value="Check" onclick ="" style="display:none"></input>
+        </div>
+        <div id="word3" class="word" style="display:none">
+        3.
+        <input type="text" style="display:none" id="text3"></input>
+        <input type="button" class="check-answer" id="check-answer3" value="Check" onclick ="" style="display:none"></input>
+        </div>
+        <div id="word4" class="word" style="display:none">
+        4.
+        <input type="text" style="display:none" id="text4"></input>
+        <input type="button" class="check-answer" id="check-answer4" value="Check" onclick ="" style="display:none"></input>
+        </div>
+        <div id="word5" class="word" style="display:none">
+        5.
+        <input type="text" style="display:none" id="text5"></input>
+        <input type="button" class="check-answer" id="check-answer5" value="Check" onclick ="" style="display:none"></input>
+        </div>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/gamev2.js"></script>
