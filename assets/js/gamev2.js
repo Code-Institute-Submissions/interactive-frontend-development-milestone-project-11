@@ -2,10 +2,20 @@ const sourceData = ["sliced", "searched", "jumped", "crashed", "creased", "dove"
 "tumbled", "stretched"];
 console.log(sourceData);
 
+let words = [];
 
+function generateWords() {
+    let leftWords = sourceData.slice(0);
+    for (let i=0; i<21; i++) {
+        let gen = words.push(leftWords[Math.floor(Math.random() * leftWords.length)]);
+        leftWords = leftWords.filter( ( el ) => !words.includes( el ) );
+    }
+    console.log(words);
+    console.log(leftWords);
+}
 
-function newGame(){
-    var level = 0;
+function setLevelRound() {
+    var level = 1;
     var round = 1;
     var score = 0;
 
@@ -13,9 +23,29 @@ function newGame(){
     sessionStorage.setItem("round", round);
     sessionStorage.setItem("score", score);
 
-    levelUp();
+    document.getElementById("level").innerHTML = sessionStorage.getItem("level");
+    document.getElementById("round").innerHTML = sessionStorage.getItem("round");
+    document.getElementById("score").innerHTML = sessionStorage.getItem("score");
 }
 
-function levelUp(){
-    
+//Increase Level
+function levelUp() {
+    var level = sessionStorage.getItem("level");
+    console.log("Old Level:" + level);
+    level++;
+    console.log("New Level:" + level);
+    sessionStorage.setItem("level", level);
+    document.getElementById("level").innerHTML = sessionStorage.getItem("level");
+    return;
+}
+
+//Increase Round
+function roundUp() {
+    var round = sessionStorage.getItem("round");
+    console.log("Old Round:" + round);
+    round++;
+    console.log("New Round:" + round);
+    sessionStorage.setItem("round", round);
+    document.getElementById("round").innerHTML = sessionStorage.getItem("round");
+    return;
 }
