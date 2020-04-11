@@ -15,7 +15,7 @@
         <h3>Remember:</h3>
         <div id="flashcard1">Flashcard Word:</div>
         <button id="nextWord" onclick="nextFlashCard()">Next</button>
-        <button id="start" onclick="showGameboard()" style="display:none">Start</button>
+        <button id="start" onclick="resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
     </div>
 
     <div id="gameboard" style="border: 5px solid red; display: none">
@@ -26,21 +26,22 @@
         <h2>Word List:</h2>
         
         <div id="word1" class="word" style="display:none">
-        1.
+        1. <span id="span1">______________</span>
         <div id="word2" class="word" style="display:none">
-        2.
+        2. <span id="span2">______________</span>
         </div>
         <div id="word3" class="word" style="display:none">
-        3.
+        3. <span id="span3">______________</span>
         </div>
         <div id="word4" class="word" style="display:none">
-        4.
+        4. <span id="span4">______________</span>
         </div>
         <div id="word5" class="word" style="display:none">
-        5.
+        5. <span id="span5">______________</span>
         </div>
-        <input type="text" style="display:none" id="text1"></input>
-        <input type="button" class="check-answer" id="check-answer1" value="Check" onclick ="" style="display:none"></input>
+        
+        <input type="text" id="text" placeholder="Type something...">
+        <input type="button" class="check-answer" id="check-answer" value="Check" onclick ="checkAnswer()">
         </div>
 
         
