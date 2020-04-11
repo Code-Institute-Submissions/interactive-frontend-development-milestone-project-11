@@ -34,7 +34,7 @@ function setLevelRound() {
 }
 
 class FlashCards {
-    constructor(words) {
+    constructor() {
         this.words = words;
         this.currentWordIndex = 0;
         this.level = parseInt(sessionStorage.getItem("level"));
@@ -42,12 +42,12 @@ class FlashCards {
     }
 
     displayCurrentWord() {
-    console.info(this.words[this.currentWordIndex]);
-    return this.words[this.currentWordIndex];
+    console.info(flashcard.words[flashcard.currentWordIndex]);
+    return flashcard.words[flashcard.currentWordIndex];
     }
 
     incrementWordIndex() {
-  	this.currentWordIndex = this.currentWordIndex + 1;
+  	flashcard.currentWordIndex = flashcard.currentWordIndex + 1;
     }
 
 }
@@ -69,4 +69,33 @@ function nextFlashCard(){
         $("#nextWord").hide();
         $("#start").show();
     }
+}
+
+class Gameboards {
+    constructor() {
+        this.checkWord = "";
+        this.words = words;
+        this.currentWordIndex = 0;
+        this.level = parseInt(sessionStorage.getItem("level"));
+        this.lastWordIndex = (this.level*2);
+    }
+
+    incrementWordIndex() {
+  	    this.currentWordIndex = this.currentWordIndex + 1;
+    }
+
+    currentAnswerWord() {
+        console.info(this.words[this.currentWordIndex]);
+        return this.words[this.currentWordIndex];
+    }
+}
+
+function showGameboard(){
+    document.getElementById("flashcard").style.display = "none";
+    document.getElementById("gameboard").style.display = "block";
+}
+
+function checkAnswer() {
+    gameboard = new Gameboards(words);
+
 }
