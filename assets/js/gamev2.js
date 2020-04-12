@@ -153,10 +153,10 @@ function showSpaces(){
         console.log(e);
         document.getElementById(e).style.display = "block";
     } 
-    waitingForClick();
+    waitingForEnterKey();
 }
 
-function waitingForClick(){
+function waitingForEnterKey(){
     let input = document.getElementById("text");
     input/addEventListener("keyup", function(event){
         if (event.keyCode === 13){
