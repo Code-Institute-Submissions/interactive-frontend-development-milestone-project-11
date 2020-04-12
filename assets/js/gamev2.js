@@ -153,8 +153,19 @@ function showSpaces(){
         console.log(e);
         document.getElementById(e).style.display = "block";
     } 
+    waitingForClick();
 }
-    
+
+function waitingForClick(){
+    let input = document.getElementById("text");
+    input/addEventListener("keyup", function(event){
+        if (event.keyCode === 13){
+            event.preventDefault();
+            document.getElementById("check-answer").click();
+        }
+    });
+}
+
 function checkAnswer() {
     //console.log(document.getElementById(text1).value);
     gameboard.checkWord = (document.getElementById("text").value).toLowerCase();
