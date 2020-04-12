@@ -33,16 +33,39 @@ function setLevelRound() {
     document.getElementById("score").innerHTML = sessionStorage.getItem("score");
 }
 
-function levelUp() {
+function roundUp() {
+    let round = sessionStorage.getItem("round");
+    console.log("Old Round:" + round);
+    round++;
+    console.log("New Round:" + round);
+    sessionStorage.setItem("round", round);
+    restartLevel();
+    nextRoundGame();
+}
+
+
+function restartLevel(){
     let level = sessionStorage.getItem("level");
     console.log("Old Level:" + level);
-    level++;
+    level = 0;
     console.log("New Level:" + level);
     sessionStorage.setItem("level", level);
-    document.getElementById("level").innerHTML = sessionStorage.getItem("level");
-    clearGameboard();
-    hideGameboard();
-    showFlashcards();
+}
+
+function levelUp() {
+    let level = parseInt(sessionStorage.getItem("level"));
+    console.log("Old Level:" + level);
+    if (level == 10) {
+        roundUp();
+    } else {
+        level++;
+        console.log("New Level:" + level);
+        sessionStorage.setItem("level", level);
+        document.getElementById("level").innerHTML = sessionStorage.getItem("level");
+        clearGameboard();
+        hideGameboard();
+        showFlashcards();
+    }
 }
 
 function scoreUp() {
@@ -134,7 +157,7 @@ function showSpaces(){
     
 function checkAnswer() {
     //console.log(document.getElementById(text1).value);
-    gameboard.checkWord = document.getElementById("text").value;
+    gameboard.checkWord = (document.getElementById("text").value).toLowerCase();
     console.log(gameboard.checkWord);
     console.log(gameboard.currentAnswerWord());
     if (gameboard.checkWord == gameboard.currentAnswerWord()) {
@@ -165,4 +188,12 @@ function clearGameboard(){
 
 function hideGameboard() {
     document.getElementById("gameboard").style.display = "none";
+}
+
+function nextRoundGame() {
+
+}
+
+function completeRestartGame(){
+
 }
