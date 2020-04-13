@@ -1,24 +1,30 @@
-
-let sourceData = "";
+/*
+let sourceData = [];
 
 getData();
 async function getData(){
     const response = await fetch('assets/csv/verbsPastTense.csv');
     const data = await response.text();
     console.log(data);
-
-    return sourceData = data.split('\n');
+    const objects = data.split('\n');
+    return sourceData = Object.values(objects); // ['b', 'c', 'a']
     
 }
-console.log(sourceData);
+console.log(sourceData);*/
 
-/*const sourceData = ["sliced", "searched", "jumped", "crashed", "creased", "dove", "ran", "danced", "booked", "threw", "needed", "sought", "forgot", "ignored", "juggled", "thought", "felt", "caught", "rejoiced", "thrived", "dashed", "pranced", "slept", "fought", "crumbled", "collapsed", "treasured", "silenced", "rose", "assigned", "allotted", "collected", "met", "traded", "assumed", "dipped",
+const sourceData = ["fractured", "framed","franchised","frazzled","freaked","freckled","froze","freshened","frittered","lapped",
+"lapsed","larked","lashed","mended","mentored","mesmerized","peered","peeved","pegged","penalized","peppered","perched","metamorphosed",
+"mewed","microfilmed","migrated","lasted","frizzed","frothed","fudged","guffawed","gurgled","gulped","guttered","habited",
+"hackled","haggled","fueled", "sliced", "searched", "jumped", "crashed", "creased", "dove", "ran", "danced", "booked", "threw", "needed", 
+"sought", "forgot", "ignored", "juggled", "thought", "felt", "caught", "rejoiced", "thrived", "dashed", "pranced", "slept", "fought", "crumbled", 
+"collapsed", "treasured", "silenced", "rose", "assigned", "allotted", "collected", "met", "traded", "assumed", "dipped",
 "tumbled", "stretched"];
 console.log(sourceData);
-*/
+
 let words = [];
 
 function generateWords() {
+    console.log(sourceData);
     let leftWords = sourceData.slice(0);
     for (let i=0; i<21; i++) {
         let gen = words.push(leftWords[Math.floor(Math.random() * leftWords.length)]);
@@ -195,7 +201,7 @@ function checkAnswer() {
         let e = "span" + (gameboard.currentWordIndex + 1);
         document.getElementById(e).innerHTML = gameboard.checkWord;
         scoreUp();
-        document.getElementById("text").value = "";
+        clearText();
         if (gameboard.currentWordIndex == gameboard.lastWordIndex) {
             levelUp();
         } else {
@@ -224,7 +230,12 @@ function nextRoundGame() {
 
 }
 
+function clearText() {
+    document.getElementById("text").value = "";
+}
+
 function restartGame(){
+    clearText();
     setLevelRound();
     clearGameboard();
     hideGameboard();
