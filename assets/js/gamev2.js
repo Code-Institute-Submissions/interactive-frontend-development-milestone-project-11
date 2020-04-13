@@ -1,7 +1,21 @@
-const sourceData = ["sliced", "searched", "jumped", "crashed", "creased", "dove", "ran", "danced", "booked", "threw", "needed", "sought", "forgot", "ignored", "juggled", "thought", "felt", "caught", "rejoiced", "thrived", "dashed", "pranced", "slept", "fought", "crumbled", "collapsed", "treasured", "silenced", "rose", "assigned", "allotted", "collected", "met", "traded", "assumed", "dipped",
-"tumbled", "stretched"];
+
+let sourceData = "";
+
+getData();
+async function getData(){
+    const response = await fetch('assets/csv/verbsPastTense.csv');
+    const data = await response.text();
+    console.log(data);
+
+    return sourceData = data.split('\n');
+    
+}
 console.log(sourceData);
 
+/*const sourceData = ["sliced", "searched", "jumped", "crashed", "creased", "dove", "ran", "danced", "booked", "threw", "needed", "sought", "forgot", "ignored", "juggled", "thought", "felt", "caught", "rejoiced", "thrived", "dashed", "pranced", "slept", "fought", "crumbled", "collapsed", "treasured", "silenced", "rose", "assigned", "allotted", "collected", "met", "traded", "assumed", "dipped",
+"tumbled", "stretched"];
+console.log(sourceData);
+*/
 let words = [];
 
 function generateWords() {
