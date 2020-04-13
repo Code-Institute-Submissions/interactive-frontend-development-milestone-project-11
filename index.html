@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Page One</title>
-    <!--<link rel = "stylesheet" type = "text/css" href = "assets/css/style.css" />-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css">
+      <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <title>Verbs Game</title>
+
 </head>
 <body>
+<header>
+      <!--navbar code from Code Institute Whiskey drop Tutorial------>
+         <nav class="navbar navbar-dark bg-color-navbar navbar-expand-md">
+            <a href="index.html" class="logo navbar-brand">
+               <img src="assets/images/NN-Version-1---Rgb255-242-210-----.png" class="logo-image d-inline-block align-center" alt="Logo">
+               <div class="d-inline-block brand-name"> <strong>
+                  Skills <span class="sm-brand-name"> & </span> Scales <br> <span class="sm-brand-name"> Hypnotherapy </span> </strong>
+               </div>
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Togle navigation">
+            <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar navbar-collapse" id="navbarNavDropdown">
+               <ul class="navbar-nav mr-auto">
+                  <li class="active nav-item mr-2"><a class="nav-link" href="index.html">Home</a></li>
+                  <li class="nav-item mr-2"><a class="nav-link" href="about.html">About</a></li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle r-border" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     FAQ
+                     </a>
+                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a href="faq.html" class="dropdown-item">Hypnotherapy</a>
+                        <a href="faq.html#services" class="dropdown-item">Services</a>
+                     </div>
+                  </li>
+                  <li class="nav-item mr-2"><a class="nav-link" href="contact.html">Contact</a></li>
+               </ul>
+            </div>
+         </nav>
+         <!--navbar code from Code Institute Whiskey drop Tutorial------>
+      </header>
 
-    <button id="" onclick="generateWords(), startGame()">New Game</button>
+    <button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
+    <button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
     
     <div id="flashcard" style="border: 1px solid blue; display: none">
         <h3>Remember:</h3>
@@ -93,7 +129,17 @@
         <input type="button" class="check-answer" id="check-answer" value="Check" onclick ="checkAnswer()">
     </div>
 
-        
+    
+<footer class="container-fluid bg-color-footer">
+         <div class="row">
+            <div class="col-12 footer-quote">
+               <strong>Some Quote!</strong>
+            </div>
+        </div>
+</footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/gamev2.js"></script>
 </body>

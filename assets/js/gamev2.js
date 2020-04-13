@@ -28,6 +28,11 @@ function generateWords() {
     console.log(leftWords);
 }
 
+function switchButton(){
+    document.getElementById("NewGame1").style.display = "none";
+    document.getElementById("NewGame2").style.display = "block";
+}
+
 function startGame() {
     setLevelRound();
     showFlashcards();
@@ -219,6 +224,11 @@ function nextRoundGame() {
 
 }
 
-function completeRestartGame(){
-
+function restartGame(){
+    setLevelRound();
+    clearGameboard();
+    hideGameboard();
+    words = [];
+    generateWords();
+    showFlashcards();
 }
