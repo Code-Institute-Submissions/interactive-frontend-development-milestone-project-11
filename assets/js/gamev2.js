@@ -209,7 +209,8 @@ function checkAnswer() {
         }
     } else {
         console.log("Incorrect!");
-        return;
+        let f = "span" + (gameboard.currentWordIndex + 1);
+        document.getElementById(f).innerHTML = "______________" + " " + "Try again!";
     }
 }
 
