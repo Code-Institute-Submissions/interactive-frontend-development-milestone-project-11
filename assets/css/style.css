@@ -1,0 +1,73 @@
+ 
+/*---------------------------------------Font Links*/
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Special+Elite&display=swap');
+
+.word {
+    font-family: 'Special Elite', cursive;
+    font-family: 'Nixie One', cursive;  
+    font-family: 'Special Elite', cursive;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Special Elite', cursive;
+font-family: 'Cormorant Garamond', serif;
+}
+
+.writing {
+font-family: 'Special Elite', cursive;
+font-family: 'Tangerine', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Handlee', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Caveat', cursive;
+}
+
+.heading {
+font-family: 'Special Elite', cursive;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Cabin Sketch', cursive;
+}
+
+.flashcard {
+font-family: 'Special Elite', cursive;
+font-family: 'Itim', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Cantarell', sans-serif;
+}
+
+.navbar {
+    background-color: #a4e269c9
+}
+
+.callout-container {
+    height: 100vh;
+
+  background: url("../images/pen.jpg") no-repeat bottom right fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+}
+
+.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
