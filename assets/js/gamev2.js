@@ -199,7 +199,7 @@ function checkAnswer() {
     if (gameboard.checkWord == gameboard.currentAnswerWord()) {
         console.log("That's correct!");
         let e = "span" + (gameboard.currentWordIndex + 1);
-        document.getElementById(e).innerHTML = gameboard.checkWord;
+        document.getElementById(e).innerHTML = gameboard.checkWord + " " + "<i class='far fa-check-circle icon'></i>";
         scoreUp();
         clearText();
         if (gameboard.currentWordIndex == gameboard.lastWordIndex) {
