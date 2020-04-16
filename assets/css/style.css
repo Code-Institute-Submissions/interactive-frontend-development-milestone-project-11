@@ -30,7 +30,7 @@ font-family: 'Caveat', cursive;
 }
 */
 
-h1,h2 {
+h1,h2,.btn {
 font-family: 'Fredericka the Great', cursive;
 font-weight: 500;
 }
@@ -82,7 +82,17 @@ font-family: 'Cantarell', sans-serif;
     font-weight: 500;
 }
 
+/*-------------------------------------------Structure From Facebook Button*/
+.btn--jum {
+    text-shadow: 1px 1px 1px rgb(24, 48, 22); 
+    background: linear-gradient(#3b8628, #193b0c);
+    background-color: #377a1a;
+    box-shadow: inset 0 1px 1px #7ebb64;
+    border-color: #2b4e1a #274916 #112405;
+}
+/*-------------------------------------------Structure From Facebook Button*/
 
+/*--------------------------------------------Modals - General*/
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -166,4 +176,49 @@ font-family: 'Cantarell', sans-serif;
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/*--------------------------------------------Modals - General*/
+
+/*--------------------------------------------Gameboard*/
+#gameboard{
+background-image: url("../images/page.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.stats {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.icon {
+    color: #377a1a;
+    padding-left: 5px;
+}
+
+.word--row {
+    display: block;
+    margin: 0;
+
+}
+
+/*--------------------------------------------Gameboard*/
+
+/*--------------------------------------------Footer*/
+
+footer {
+    background-image: linear-gradient(rgb(4, 1, 19), rgba(8, 8, 37, 0.945));
+    color: #f5dd8e;
+    text-shadow: 2px 2px 5px black; 
+}
+
+.sm--font {
+    font-size: 0.8rem;
 }
