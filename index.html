@@ -26,16 +26,16 @@
 
 </header>
  <div class="container-fluid callout-container">
-        <div class="opaque-overlay">&nbsp;</div>
+        <div class="opaque-overlay"></div>
         <div class="row">
             <div class="col-12">
                 <section class="callout jumbotron text-center">
-                    <h1 class="jumbotron-header">The finest whiskeys delivered to your doorstep.</h1>
+                    <h1 class="jumbotron-header">Strengthen <br> your writing <br> with a simple <br> game.</h1>
                     <hr class="block-divider block-divider--orange">
-                    <p class="lead">Sign up today to start receiving the world's best whiskeys every month. 
-                    <s class="d-none d-sm-inline">€19..99</s>
+                    <p class="lead">Memorise verbs now & watch them float effortlessly to mind later! 
+                    
                     <span class="d-inline d-sm-none"><br></span> 
-                    <strong><mark>First one is free!</mark></strong></p>
+                    <strong><mark>Sharpen your skills for free!</mark></strong></p>
                     <button id="playBtn" class="btn btn-lg btn--cta btn--red">Play</button>
                     <p class="text-muted"><small>You must be over 18 to sign up to our sevice. Please, drink responsibily.</small></p>
                 </section>
@@ -49,17 +49,16 @@
 <div id="instructionsModal" class="modal">
 
   <!-- Modal content -->
-<div class="modal-content">
-  <div class="modal-header">
-    <span class="close">&times;</span>
-    <h2>Modal Header</h2>
+<div class="center modal-content">
+  <div class="modal-header modalheader">
+    <h2>Instructions</h2>
   </div>
   <div class="modal-body">
     <p>Some text in the Modal Body</p>
     <p>Some other text...</p>
   </div>
-  <div class="modal-footer">
-    <h3>Modal Footer</h3>
+  <div class="modal-footer modalfooter">
+    <button id="nextBtn" class="modalbtn modalbtnright" onclick="closeInstructions(), generateWords(), startGame()">Next</button>
   </div>
 </div>
 
@@ -70,8 +69,8 @@
 <!------------------------------------>
 
 
-    <button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
-    <button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
+    <!---<button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
+    --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
     
     <div id="flashcard" style="border: 1px solid blue; display: none">
         <h3>Remember:</h3>

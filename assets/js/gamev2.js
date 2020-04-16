@@ -11,7 +11,7 @@ async function getData(){
     
 }
 console.log(sourceData);*/
-/*
+
 const sourceData = ["fractured", "framed","franchised","frazzled","freaked","freckled","froze","freshened","frittered","lapped",
 "lapsed","larked","lashed","mended","mentored","mesmerized","peered","peeved","pegged","penalized","peppered","perched","metamorphosed",
 "mewed","microfilmed","migrated","lasted","frizzed","frothed","fudged","guffawed","gurgled","gulped","guttered","habited",
@@ -126,6 +126,7 @@ function showFlashcards(){
     console.log(flashcard);
     document.getElementById("flashcard").style.display = "block";
     document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
+    window.location.hash = "flashcard";
 }
 
 function nextFlashCard(){
@@ -178,8 +179,14 @@ function showSpaces(){
         console.log(e);
         document.getElementById(e).style.display = "block";
     } 
+    focusTextField();
     waitingForEnterKey();
 }
+
+function focusTextField(){
+    document.getElementById("text").focus();
+}
+
 
 function waitingForEnterKey(){
     let input = document.getElementById("text");
@@ -244,9 +251,9 @@ function restartGame(){
     generateWords();
     showFlashcards();
 }
-*/
 
-// Instruction Modal JS
+
+// InstructionModal JS
 var instructionsModal = document.getElementById("instructionsModal");
 
 // Get the button that opens the modal
@@ -259,6 +266,6 @@ playbtn.onclick = function() {
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+function closeInstructions() {
+  instructionsModal.style.display = "none";
 }
