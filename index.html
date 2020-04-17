@@ -50,33 +50,62 @@
   <!-- Modal content -->
 <div class="center modal-content">
   <div class="modal-header modalheader">
-    <h2>Instructions</h2>
+    <h2 class="heading-modal">Instructions</h2>
   </div>
   <div class="modal-body">
-    <p>Some text in the Modal Body</p>
-    <p>Some other text...</p>
+  <ul class="instruction-ul">
+    <li class="instruction-li">Memorise the word and their order on each flashcard</li>
+    <li class="instruction-li">Click <strong>Start</strong> to test your memory</li>
+    <li class="instruction-li">Type your answer in the field at bottom of the Gameboard </li>
+    <li class="instruction-li">Press <strong>Enter</strong> on your keyboard or click <strong>Check</strong> to see if you're right!</li>
+   
+    </ul>
   </div>
   <div class="modal-footer modalfooter">
-    <button id="nextBtn" class="btn modalbtn modalbtnright" onclick="closeInstructions(), generateWords(), startGame()">Next</button>
+    <button id="nextBtn" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="closeInstructions(), generateWords(), startGame(), showFlashcards(), showFlashcardsModal()">Next</button>
   </div>
 </div>
-
 </div>
 
+<!------------------------------------>
 
+<!---------------Flashcards Modal-------------------->
+<!-- Trigger/Open The Modal -->
+
+<!-- The Modal -->
+<div id="flashcardModal" class="modal">
+
+  <!-- Modal content -->
+<div class="center modal-content">
+  <div class="modal-header modalheader">
+    <h2 class="heading-modal">Flashcard</h2>
+    <div id="flashcardNum">?/?</div>
+  </div>
+  <div class="modal-body">
+  <p id="flashcard1">Flashcard Word:</p>
+  </div>
+
+  <div class="modal-footer modalfooter">
+  <button id="nextWord" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="nextFlashCard()">Next</button>
+    <button id="start" class="btn modalbtn modalbtnright modalbtn-pref" onclick="closeFlashacards(), resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
+  </div>
+</div>
+</div>
 
 <!------------------------------------>
 
 
+
     <!---<button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
     --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
-    
+    <!----
     <div id="flashcard" style="border: 1px solid blue; display: none">
         <h3>Remember:</h3>
         <div id="flashcard1">Flashcard Word:</div>
         <button id="nextWord" onclick="nextFlashCard()">Next</button>
         <button id="start" onclick="resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
     </div>
+    --->
 
     <div id="gameboard" class="container-fluid container" style="display: none">
        <div class="container-fluid gameboard-contents">
