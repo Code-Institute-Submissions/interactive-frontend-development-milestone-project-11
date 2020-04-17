@@ -124,7 +124,7 @@ class FlashCards {
 function showFlashcards(){
     flashcard = new FlashCards();
     console.log(flashcard);
-    document.getElementById("flashcard").style.display = "block";
+    /*document.getElementById("flashcard").style.display = "block";*/
     document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
     window.location.hash = "flashcard";
 }
@@ -282,6 +282,7 @@ var nextBtn = document.getElementById("nextBtn");
 function showFlashcardsModal() {
   flashcardModal.style.display = "block";
 }
+
 
 // When the user clicks on <span> (x), close the modal
 function closeFlashcards() {
