@@ -1,231 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-    <title>Verbs Game</title>
-
-</head>
-<body>
-
-<header>
-<div class="navbar">
-<h1>To Verb!</h1>
-<p>Strong Verbs for Stronger Writing</p>
-</div>
-
-</header>
- <div id="callout" class="container-fluid callout-container">
-        <div class="opaque-overlay"></div>
-        <div class="row">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css">
+      <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <title>Verbs Game</title>
+   </head>
+   <body>
+      <header>
+         <div class="navbar">
+            <h1>To Verb!</h1>
+            <p>Strong Verbs for Stronger Writing</p>
+         </div>
+      </header>
+      <div id="callout" class="container-fluid callout-container">
+         <div class="opaque-overlay"></div>
+         <div class="row">
             <div class="col-12">
-                <section class="callout jumbotron text-center">
-                    <h1 class="jumbotron-header">Strengthen <br> your writing <br> with a simple <br> game.</h1>
-                    <hr class="block-divider block-divider--orange">
-                    <p class="lead">Memorise verbs now & watch them float effortlessly to mind later! 
-                    
-                    <span class="d-inline d-sm-none"><br></span> 
-                    <strong><mark>Sharpen your skills for free!</mark></strong></p>
-                    <button id="playBtn" class="btn btn-success btn-lg btn--jum">Play</button>
-                    </section>
+               <section class="callout jumbotron text-center">
+                  <h1 class="jumbotron-header">Strengthen <br> your writing <br> with a simple <br> game.</h1>
+                  <hr class="block-divider block-divider--orange">
+                  <p class="lead">Memorise verbs now & watch them float effortlessly to mind later! 
+                     <span class="d-inline d-sm-none"><br></span> 
+                     <strong><mark>Sharpen your skills for free!</mark></strong>
+                  </p>
+                  <button id="playBtn" class="btn btn-success btn-lg btn--jum">Play</button>
+               </section>
             </div>
-        </div>
-    </div>
-<!---------------Intructions Modal-------------------->
-<!-- Trigger/Open The Modal -->
-
-<!-- The Modal -->
-<div id="instructionsModal" class="modal">
-
-  <!-- Modal content -->
-<div class="center modal-content">
-  <div class="modal-header modalheader">
-    <h2 class="heading-modal">Instructions</h2>
-  </div>
-  <div class="modal-body">
-  <ul class="instruction-ul">
-    <li class="instruction-li">Memorise the word and their order on each flashcard</li>
-    <li class="instruction-li">Click <strong>Start</strong> to test your memory</li>
-    <li class="instruction-li">Type your answer in the field at bottom of the Gameboard </li>
-    <li class="instruction-li">Press <strong>Enter</strong> on your keyboard or click <strong>Check</strong> to see if you're right!</li>
-   
-    </ul>
-  </div>
-  <div class="modal-footer modalfooter">
-    <button id="nextBtn" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="closeInstructions(), generateWords(), startGame(), showFlashcardsModal(), showFlashcards()">Next</button>
-  </div>
-</div>
-</div>
-
-<!------------------------------------>
-
-<!---------------Flashcards Modal-------------------->
-<!-- Trigger/Open The Modal -->
-
-<!-- The Modal -->
-<div id="flashcardModal" class="modal flashcard">
-
-  <!-- Modal content -->
-<div class="center modal-content">
-  <div class="modal-header modalheader">
-    <h2 class="heading-modal">Flashcard</h2>
-    <div id="flashcardNum">?/?</div>
-  </div>
-  <div class="modal-body">
-  <p id="flashcard1">Flashcard Word:</p>
-  </div>
-
-  <div class="modal-footer modalfooter">
-  <button id="nextWord" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="nextFlashCard()">Next</button>
-    <button id="start" class="btn modalbtn modalbtnright modalbtn-pref" onclick="closeFlashcards(), resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
-  </div>
-</div>
-</div>
-
-<!------------------------------------>
-
-
-
-    <!---<button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
-    --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
-    <!----
-    <div id="flashcard" style="border: 1px solid blue; display: none">
-        <h3>Remember:</h3>
-        <div id="flashcard1">Flashcard Word:</div>
-        <button id="nextWord" onclick="nextFlashCard()">Next</button>
-        <button id="start" onclick="resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
-    </div>
-    --->
-
-    <div id="gameboard" class="container-fluid container" style="display: none">
-       <div class="container-fluid gameboard-contents">
-        <div class="row">
-            <div class= "stats">Score: <span id="score" class="stats-data"></span></div>
-            <div class= "stats">Level: <span id="level" class="stats-data"></span></div>
-            <div class= "stats">Round: <span id="round" class="stats-data"></span></div>
-            <button id="NewGame3" class="" onclick="restartGame()">New Game</button>
-        </div>
-
-        <div class="row word--row">
-            <div id="wordList">
-            <h2>Word List:</h2>
+         </div>
+      </div>
+      <!---------------Intructions Modal-------------------->
+      <!-- Trigger/Open The Modal -->
+      <!-- The Modal -->
+      <div id="instructionsModal" class="modal">
+         <!-- Modal content -->
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <h2 class="heading-modal">Instructions</h2>
             </div>
+            <div class="modal-body">
+               <ul class="instruction-ul">
+                  <li class="instruction-li">Memorise the word and their order on each flashcard</li>
+                  <li class="instruction-li">Click <strong>Start</strong> to test your memory</li>
+                  <li class="instruction-li">Type your answer in the field at bottom of the Gameboard </li>
+                  <li class="instruction-li">Press <strong>Enter</strong> on your keyboard or click <strong>Check</strong> to see if you're right!</li>
+               </ul>
             </div>
-       <div class="row word--row">
-            <div id="word1" class="word" style="display:none">
-                1. <span id="span1">______</span>
+            <div class="modal-footer modalfooter">
+               <button id="nextBtn" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="closeInstructions(), generateWords(), startGame(), showFlashcardsModal(), showFlashcards()">Next</button>
             </div>
-            <div id="word8" class="word" style="display:none">
-                 8. <span id="span8">______</span>
+         </div>
+      </div>
+      <!------------------------------------>
+      <!---------------Flashcards Modal-------------------->
+      <!-- Trigger/Open The Modal -->
+      <!-- The Modal -->
+      <div id="flashcardModal" class="modal flashcard">
+         <!-- Modal content -->
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <h2 class="heading-modal">Flashcard</h2>
+               <div id="flashcardNum">?/?</div>
             </div>
-            <div id="word15" class="word" style="display:none">
-                15. <span id="span15">______</span>
+            <div class="modal-body">
+               <p id="flashcard1">Flashcard Word:</p>
             </div>
-        </div>
+            <div class="modal-footer modalfooter">
+               <button id="nextWord" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="nextFlashCard()">Next</button>
+               <button id="start" class="btn btn-success modalbtn modalbtnright modalbtn-pref" onclick="closeFlashcards(), resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
+            </div>
+         </div>
+      </div>
+      <!------------------------------------>
+      <!---<button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
+         --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
+      <!----
+         <div id="flashcard" style="border: 1px solid blue; display: none">
+             <h3>Remember:</h3>
+             <div id="flashcard1">Flashcard Word:</div>
+             <button id="nextWord" onclick="nextFlashCard()">Next</button>
+             <button id="start" onclick="resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
+         </div>
+         --->
+      <div id="gameboard" class="container-fluid container" style="display: none">
+         
+            <div id="scoreboard" class="row no-gutters">
+               <div class="container-fluid">
+                  <div class= "stats">Score: <span id="score" class="stats-data"></span></div>
+                  <div class= "stats">Level: <span id="level" class="stats-data"></span></div>
+                  <div class= "stats">Round: <span id="round" class="stats-data"></span></div>
+                  <button id="NewGame3" class="btn modalbtn modalbtn-non-pref" onclick="restartGame()">New Game</button>
+               </div>
+            </div>
+            <div class="container-fluid gameboard-contents">
             <div class="row word--row">
-            <div id="word2" class="word" style="display:none">
-            2. <span id="span2">______</span>
-            </div>
-            <div id="word9" class="word" style="display:none">
-        9. <span id="span9">______</span>
-        </div>
-        <div id="word16" class="word" style="display:none">
-        16. <span id="span16">______</span>
-        </div>
-        </div>
-            <div class="row word--row">
-            <div id="word3" class="word" style="display:none">
-            3. <span id="span3">______</span>
-            </div>
-            <div id="word10" class="word" style="display:none">
-        10. <span id="span10">______</span>
-        </div>
-        <div id="word17" class="word" style="display:none">
-        17. <span id="span17">______</span>
-        </div>
-        </div>
-            <div class="row word--row">
-        <div id="word4" class="word" style="display:none">
-        4. <span id="span4">______</span>
-        </div>
-        <div id="word11" class="word" style="display:none">
-        11. <span id="span11">______</span>
-        </div>
-        <div id="word18" class="word" style="display:none">
-        18. <span id="span18">______</span>
-        </div>
-        </div>
-        <div class="row word--row">
-        <div id="word5" class="word" style="display:none">
-        5. <span id="span5">______</span>
-        </div>
-        <div id="word12" class="word" style="display:none">
-        12. <span id="span12">______</span>
-        </div>
-        <div id="word19" class="word" style="display:none">
-        19. <span id="span19">______</span>
-        </div>
-        </div>
-        <div class="row word--row">
-        <div id="word6" class="word" style="display:none">
-        6. <span id="span6">______</span>
-        </div>
-        <div id="word13" class="word" style="display:none">
-        13. <span id="span13">______</span>
-        </div>
-        <div id="word20" class="word" style="display:none">
-        20. <span id="span20">______</span>
-        </div>
-        </div>
-        <div class="row word--row">
-        <div id="word7" class="word" style="display:none">
-        7. <span id="span7">______</span>
-        </div>
-        <div id="word14" class="word" style="display:none">
-        14. <span id="span14">______</span>
-        </div>
-        <div id="word21" class="word" style="display:none">
-        21. <span id="span21">______</span>
-        </div>
-        </div>
 
-        
-       
-        
-        <div class="row">
-        <input type="text" id="text" placeholder="Type something...">
-        <input type="button" class="check-answer" id="check-answer" value="Check" onclick ="checkAnswer()">
-        </div>
-    </div>
-    </div>
-
-    
-<footer class="container-fluid bg-color-footer">
+               <div id="wordList">
+                  <h2>Word List:</h2>
+               </div>
+            </div>
+            <div class="row word--row">
+               <div id="word1" class="word" style="display:none">
+                  1. <span id="span1">______</span>
+               </div>
+               <div id="word8" class="word" style="display:none">
+                  8. <span id="span8">______</span>
+               </div>
+               <div id="word15" class="word" style="display:none">
+                  15. <span id="span15">______</span>
+               </div>
+            </div>
+            <div class="row word--row">
+               <div id="word2" class="word" style="display:none">
+                  2. <span id="span2">______</span>
+               </div>
+               <div id="word9" class="word" style="display:none">
+                  9. <span id="span9">______</span>
+               </div>
+               <div id="word16" class="word" style="display:none">
+                  16. <span id="span16">______</span>
+               </div>
+            </div>
+            <div class="row word--row">
+               <div id="word3" class="word" style="display:none">
+                  3. <span id="span3">______</span>
+               </div>
+               <div id="word10" class="word" style="display:none">
+                  10. <span id="span10">______</span>
+               </div>
+               <div id="word17" class="word" style="display:none">
+                  17. <span id="span17">______</span>
+               </div>
+            </div>
+            <div class="row word--row">
+               <div id="word4" class="word" style="display:none">
+                  4. <span id="span4">______</span>
+               </div>
+               <div id="word11" class="word" style="display:none">
+                  11. <span id="span11">______</span>
+               </div>
+               <div id="word18" class="word" style="display:none">
+                  18. <span id="span18">______</span>
+               </div>
+            </div>
+            <div class="row word--row">
+               <div id="word5" class="word" style="display:none">
+                  5. <span id="span5">______</span>
+               </div>
+               <div id="word12" class="word" style="display:none">
+                  12. <span id="span12">______</span>
+               </div>
+               <div id="word19" class="word" style="display:none">
+                  19. <span id="span19">______</span>
+               </div>
+            </div>
+            <div class="row word--row">
+               <div id="word6" class="word" style="display:none">
+                  6. <span id="span6">______</span>
+               </div>
+               <div id="word13" class="word" style="display:none">
+                  13. <span id="span13">______</span>
+               </div>
+               <div id="word20" class="word" style="display:none">
+                  20. <span id="span20">______</span>
+               </div>
+            </div>
+            <div class="row word--row">
+               <div id="word7" class="word" style="display:none">
+                  7. <span id="span7">______</span>
+               </div>
+               <div id="word14" class="word" style="display:none">
+                  14. <span id="span14">______</span>
+               </div>
+               <div id="word21" class="word" style="display:none">
+                  21. <span id="span21">______</span>
+               </div>
+            </div>
+            <div class="row">
+               <input type="text" id="text" placeholder="Type something...">
+               <input type="button" class="check-answer" id="check-answer" value="Check" onclick ="checkAnswer()">
+            </div>
+         </div>
+      </div>
+      <footer class="container-fluid bg-color-footer">
          <div class="row">
             <div class="col-12 footer-quote">
                <p class="sm--font">&copy;</p>
             </div>
-        </div>
-</footer>
-
- <!--Bootstrap links-->
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-   <!--/Bootstrap links-->
-
-   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/gamev2.js"></script>
-</body>
+         </div>
+      </footer>
+      <!--Bootstrap links-->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <!--/Bootstrap links-->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="assets/js/gamev2.js"></script>
+   </body>
 </html>

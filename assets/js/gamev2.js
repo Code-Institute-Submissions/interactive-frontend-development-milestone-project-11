@@ -182,7 +182,6 @@ function showGameboard(){
     /*document.getElementById("flashcard").style.display = "none";*/
     document.getElementById("callout").style.display = "none";
     document.getElementById("gameboard").style.display = "block";
-    document.getElementById("gameboard").scrollIntoView();
     gameboard = new Gameboards();
 }
 
