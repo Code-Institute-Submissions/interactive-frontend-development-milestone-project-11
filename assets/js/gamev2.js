@@ -143,6 +143,8 @@ function nextFlashCard(){
     if (flashcard.currentWordIndex < flashcard.lastWordIndex-1){
         flashcard.incrementWordIndex();
         document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
+        document.getElementById("myDiv")
+        $("#nextWord").remove("active");
         document.getElementById("flashcardNum").innerHTML = flashcard.wordNumberDisplay() + "/" + flashcard.lastWordNumberDisplay();
     } else {
         flashcard.incrementWordIndex();

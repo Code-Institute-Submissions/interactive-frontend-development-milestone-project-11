@@ -85,7 +85,7 @@ font-family: 'Itim', cursive;
     background-color: transparent;
     color: rgb(252, 245, 224);
     font-weight: 500;
-    text-shadow: 2px 2px 5px black; 
+    text-shadow: 2px 2px 3px black; 
     margin-bottom: 0px;
 }
 .callout h1 {
@@ -297,11 +297,11 @@ background-image: url("../images/page.jpg");
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1.8rem;
-    background-color: rgb(243, 223, 172, 0.5);
+    background-color: transparent;
     background-clip: padding-box;
-    border: 0.5px solid rgb(66, 38, 1, 0.5);
+    border: 0.5px solid rgb(18, 7, 80, 0.5);
     border-width: 1.5px;
-    outline-color: rgba(83, 49, 5, 0.2);
+    outline-color: rgb(18, 7, 80, 0.1);
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
@@ -327,7 +327,7 @@ background-image: url("../images/page.jpg");
 
 #check-answer:hover,
 #check-answer:focus {
-    color: rgb(255, 242, 210);
+    color: yellow;
 }
 
 /*--------------------------------------------Gameboard*/
