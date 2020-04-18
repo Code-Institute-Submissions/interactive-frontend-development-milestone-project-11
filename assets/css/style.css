@@ -379,8 +379,8 @@ background-image: url("../images/page.jpg");
 
 @media (min-width: 768px) {
 #gamboard {
-    max-width: 60%;
-    max-height: 70%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 }
 
