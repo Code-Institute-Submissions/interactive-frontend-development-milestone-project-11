@@ -10,25 +10,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Special+Elite&display=swap');
-/*
-.word {
-    font-family: 'Special Elite', cursive;
-    font-family: 'Nixie One', cursive;  
-    font-family: 'Special Elite', cursive;
-font-family: 'Nanum Myeongjo', serif;
-font-family: 'Special Elite', cursive;
-font-family: 'Cormorant Garamond', serif;
-}
+
+
 
 .writing {
-font-family: 'Special Elite', cursive;
 font-family: 'Tangerine', cursive;
-font-family: 'Special Elite', cursive;
-font-family: 'Handlee', cursive;
-font-family: 'Special Elite', cursive;
-font-family: 'Caveat', cursive;
+font-size: 32px;
+font-weight: 900;
+letter-spacing: 2px;
+text-shadow: 0.3px 0.3px 1px rgb(6, 2, 26);
+color: rgb(18, 7, 80);
 }
-*/
+
+
+.word {
+    font-family: 'Nixie One', cursive;  
+ 
+/*font-family: 'Nanum Myeongjo', serif;
+
+font-family: 'Cormorant Garamond', serif;*/
+
+font-weight:700;
+}
 
 body {
     background-image: url("../images/bookcasebottom.jpg");
@@ -285,6 +288,45 @@ background-image: url("../images/page.jpg");
     display: block;
     margin: 0;
 
+}
+
+#text {
+    margin-left: 20px;
+    margin-right: 10px;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1.8rem;
+    background-color: rgb(243, 223, 172, 0.5);
+    background-clip: padding-box;
+    border: 0.5px solid rgb(66, 38, 1, 0.5);
+    border-width: 1.5px;
+    outline-color: rgba(83, 49, 5, 0.2);
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+#check-answer{
+    color: #f1d578b4;
+    background: linear-gradient(#0f12357a, #05032273);
+    background-color: #060b29d8;
+    box-shadow: inset 0 1px 1px #0e0f61d8;
+    border-color: #191364 #0a1441 #04031dcb;
+    font-family: 'Tangerine', cursive;
+    font-size: 28px;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    padding-right: 18px;
+    font-weight: 700;
+    border-radius: 0.3rem;
+}
+
+
+#check-answer:hover,
+#check-answer:focus {
+    color: rgb(255, 242, 210);
 }
 
 /*--------------------------------------------Gameboard*/

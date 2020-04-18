@@ -80,14 +80,9 @@
       <!------------------------------------>
       <!---<button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
          --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
-      <!----
-         <div id="flashcard" style="border: 1px solid blue; display: none">
-             <h3>Remember:</h3>
-             <div id="flashcard1">Flashcard Word:</div>
-             <button id="nextWord" onclick="nextFlashCard()">Next</button>
-             <button id="start" onclick="resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
-         </div>
-         --->
+      
+
+
       <div id="gameboard" class="container-fluid container" style="display: none">
          
             <div id="scoreboard" class="row no-gutters">
@@ -183,8 +178,8 @@
                </div>
             </div>
             <div class="row">
-               <input type="text" id="text" placeholder="Type something...">
-               <input type="button" class="check-answer" id="check-answer" value="Check" onclick ="checkAnswer()">
+               <input type="text" id="text" class="writing" placeholder="Type something...">
+               <input type="button" class="check-answer btn modalbtn modalbtn-non-pref" id="check-answer" value="Check" onclick ="checkAnswer()">
             </div>
          </div>
       </div>
