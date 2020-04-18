@@ -179,7 +179,7 @@ class Gameboards {
 }
 
 function showGameboard(){
-    document.getElementById("flashcard").style.display = "none";
+    /*document.getElementById("flashcard").style.display = "none";*/
     document.getElementById("callout").style.display = "none";
     document.getElementById("gameboard").style.display = "block";
     gameboard = new Gameboards();
