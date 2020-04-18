@@ -30,16 +30,23 @@ font-family: 'Caveat', cursive;
 }
 */
 
+body {
+    background-image: url("../images/bookcasebottom.jpg");
+     min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(15%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(15%);
+}
+
 h1,h2,.btn {
 font-family: 'Fredericka the Great', cursive;
 font-weight: 500;
 }
 
 .flashcard {
-font-family: 'Special Elite', cursive;
 font-family: 'Itim', cursive;
-font-family: 'Special Elite', cursive;
-font-family: 'Cantarell', sans-serif;
 }
 
 .navbar {

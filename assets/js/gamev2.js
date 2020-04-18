@@ -182,6 +182,7 @@ function showGameboard(){
     /*document.getElementById("flashcard").style.display = "none";*/
     document.getElementById("callout").style.display = "none";
     document.getElementById("gameboard").style.display = "block";
+    document.getElementById("gameboard").scrollIntoView();
     gameboard = new Gameboards();
 }
 
@@ -219,6 +220,7 @@ function checkAnswer() {
     if (gameboard.checkWord == gameboard.currentAnswerWord()) {
         console.log("That's correct!");
         let e = "span" + (gameboard.currentWordIndex + 1);
+        document.getElementById(e).style.color = "black";
         document.getElementById(e).innerHTML = gameboard.checkWord + " " + "<i class='far fa-check-circle icon'></i>";
         scoreUp();
         clearText();
@@ -230,7 +232,8 @@ function checkAnswer() {
     } else {
         console.log("Incorrect!");
         let f = "span" + (gameboard.currentWordIndex + 1);
-        document.getElementById(f).innerHTML = "______________" + " " + "Try again!";
+        document.getElementById(f).innerHTML = "______" + " " + "Try again!";
+        document.getElementById(f).style.color = "red";
     }
 }
 
@@ -239,7 +242,7 @@ function clearGameboard(){
         let e = "";
         e += "span" + (i+1);
         console.log(e);
-        document.getElementById(e).innerHTML = "______________";
+        document.getElementById(e).innerHTML = "______";
     } 
 }
 
