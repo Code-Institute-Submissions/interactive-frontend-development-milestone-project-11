@@ -286,13 +286,18 @@ background-image: url("../images/page.jpg");
     padding-left: 20px;
     padding-right: 10px;
     padding-top: 20px;
-    padding-bottom: 20px;
     font-family: 'Fredericka the Great', cursive;
 }
 
 .stats-data {
     color: black;
     font-weight: 700;
+}
+
+#statsNewGame {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #statsNewGame:hover,
@@ -302,23 +307,25 @@ background-image: url("../images/page.jpg");
     border-color:  rgb(88, 54, 9) rgb(66, 38, 1) rgb(36, 21, 1);
 }
 
-
+#wordList {
+    margin-left: 30px;
+    margin-top: 10px;
+}
 .icon {
     color: #377a1a;
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 .word--row {
-    display: block;
     margin: 0;
-
 }
 
 #text {
     margin-left: 20px;
-    margin-right: 10px;
+    margin-right: 0px;
+    margin-top: 14px;
     height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
+    padding: 0rem .75rem;
     font-size: 1.8rem;
     background-color: transparent;
     background-clip: padding-box;
@@ -331,6 +338,9 @@ background-image: url("../images/page.jpg");
 }
 
 #check-answer{
+    margin-top: 14px;
+    margin-left: 20px;
+    margin-right: 15px;
     color: #f1d578b4;
     background: linear-gradient(#0f12357a, #05032273);
     background-color: #060b29d8;
@@ -345,12 +355,33 @@ background-image: url("../images/page.jpg");
     padding-right: 18px;
     font-weight: 700;
     border-radius: 0.3rem;
+    text-align: center;
 }
 
 
 #check-answer:hover,
 #check-answer:focus {
     color: yellow;
+}
+
+
+.col-words {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 0px;
+    font-size: 0.8rem;
+}
+
+.word {
+    display: inline-block;
+    padding-top: 5px;
+}
+
+@media (min-width: 768px) {
+#gamboard {
+    max-width: 60%;
+    max-height: 70%;
+}
 }
 
 /*--------------------------------------------Gameboard*/

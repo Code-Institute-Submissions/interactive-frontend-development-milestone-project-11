@@ -65,9 +65,8 @@
          <!-- Modal content -->
          <div class="center modal-content">
             <div class="modal-header modalheader">
-                <span id="flashcardNum">?/?</span>
+               <span id="flashcardNum">?/?</span>
                <h2 class="heading-modal">Flashcard</h2>
-               
             </div>
             <div class="modal-body">
                <p id="flashcard1">Flashcard Word:</p>
@@ -81,102 +80,93 @@
       <!------------------------------------>
       <!---<button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
          --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
-      
-
-
       <div id="gameboard" class="container-fluid container" style="display: none">
-         
-            <div id="scoreboard" class="row no-gutters">
-               <div class="container-fluid">
-                  <div class= "stats">Score: <span id="score" class="stats-data"></span></div>
-                  <div class= "stats">Level: <span id="level" class="stats-data"></span></div>
-                  <div class= "stats">Round: <span id="round" class="stats-data"></span></div>
-                  <button id="statsNewGame" class="btn modalbtn modalbtn-non-pref" onclick="restartGame()">New Game</button>
-               </div>
+         <div id="scoreboard" class="row no-gutters">
+            <div class="container-fluid col col-12">
+            
+               <div class= "stats">Score: <span id="score" class="stats-data"></span></div>
+               <div class= "stats">Level: <span id="level" class="stats-data"></span></div>
+               <div class= "stats">Round: <span id="round" class="stats-data"></span></div>
+               <button id="statsNewGame" class="btn modalbtn modalbtn-non-pref" onclick="restartGame()">New Game</button>
             </div>
-            <div class="container-fluid gameboard-contents">
-            <div class="row word--row">
-
+            
+         </div>
+         <div class="container-fluid gameboard-contents">
+            <div class="row">
                <div id="wordList">
                   <h2>Word List:</h2>
                </div>
             </div>
             <div class="row word--row">
+            <div id="first-col" class="col col-4 col-sm-4 col-words">
                <div id="word1" class="word" style="display:none">
                   1. <span id="span1">______</span>
                </div>
-               <div id="word8" class="word" style="display:none">
-                  8. <span id="span8">______</span>
-               </div>
-               <div id="word15" class="word" style="display:none">
-                  15. <span id="span15">______</span>
-               </div>
-            </div>
-            <div class="row word--row">
                <div id="word2" class="word" style="display:none">
                   2. <span id="span2">______</span>
+               </div>
+               <div id="word3" class="word" style="display:none">
+                  3. <span id="span3">______</span>
+               </div>
+               <div id="word4" class="word" style="display:none">
+                  4. <span id="span4">______</span>
+               </div>
+               <div id="word5" class="word" style="display:none">
+                  5. <span id="span5">______</span>
+               </div>
+               <div id="word6" class="word" style="display:none">
+                  6. <span id="span6">______</span>
+               </div>
+               <div id="word7" class="word" style="display:none">
+                  7. <span id="span7">______</span>
+               </div>
+            </div>
+            <div id="second-col" class="col col-4 col-sm-4 col-words">
+               <div id="word8" class="word" >
+                  8. <span id="span8">______</span>
                </div>
                <div id="word9" class="word" style="display:none">
                   9. <span id="span9">______</span>
                </div>
-               <div id="word16" class="word" style="display:none">
-                  16. <span id="span16">______</span>
-               </div>
-            </div>
-            <div class="row word--row">
-               <div id="word3" class="word" style="display:none">
-                  3. <span id="span3">______</span>
-               </div>
                <div id="word10" class="word" style="display:none">
                   10. <span id="span10">______</span>
-               </div>
-               <div id="word17" class="word" style="display:none">
-                  17. <span id="span17">______</span>
-               </div>
-            </div>
-            <div class="row word--row">
-               <div id="word4" class="word" style="display:none">
-                  4. <span id="span4">______</span>
                </div>
                <div id="word11" class="word" style="display:none">
                   11. <span id="span11">______</span>
                </div>
-               <div id="word18" class="word" style="display:none">
-                  18. <span id="span18">______</span>
-               </div>
-            </div>
-            <div class="row word--row">
-               <div id="word5" class="word" style="display:none">
-                  5. <span id="span5">______</span>
-               </div>
                <div id="word12" class="word" style="display:none">
                   12. <span id="span12">______</span>
-               </div>
-               <div id="word19" class="word" style="display:none">
-                  19. <span id="span19">______</span>
-               </div>
-            </div>
-            <div class="row word--row">
-               <div id="word6" class="word" style="display:none">
-                  6. <span id="span6">______</span>
                </div>
                <div id="word13" class="word" style="display:none">
                   13. <span id="span13">______</span>
                </div>
-               <div id="word20" class="word" style="display:none">
-                  20. <span id="span20">______</span>
-               </div>
-            </div>
-            <div class="row word--row">
-               <div id="word7" class="word" style="display:none">
-                  7. <span id="span7">______</span>
-               </div>
                <div id="word14" class="word" style="display:none">
                   14. <span id="span14">______</span>
+               </div>
+            </div>
+            <div id="third-col" class="col col-4 col-sm-4 col-words">
+               <div id="word15" class="word" >
+                  15. <span id="span15">______</span>
+               </div>
+               <div id="word16" class="word" style="display:none">
+                  16. <span id="span16">______</span>
+               </div>
+               <div id="word17" class="word" style="display:none">
+                  17. <span id="span17">______</span>
+               </div>
+               <div id="word18" class="word" style="display:none">
+                  18. <span id="span18">______</span>
+               </div>
+               <div id="word19" class="word" style="display:none">
+                  19. <span id="span19">______</span>
+               </div>
+               <div id="word20" class="word" style="display:none">
+                  20. <span id="span20">______</span>
                </div>
                <div id="word21" class="word" style="display:none">
                   21. <span id="span21">______</span>
                </div>
+            </div>
             </div>
             <div class="row">
                <input type="text" id="text" class="writing" placeholder="Type something...">
