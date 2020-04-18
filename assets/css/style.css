@@ -227,19 +227,16 @@ font-family: 'Itim', cursive;
     border-color: #8f6406 #583e04 #382703;
 }
 
-
 .modalbtn:hover,
 .modalbtn:focus {
-  color: white;
+  color: rgb(255, 242, 210);
   text-decoration: none;
   cursor: pointer;
 }
 
 .modalbtn-non-pref:hover,
 .modalbtn-non-pref:focus {
-    background-color: rgb(66, 38, 1);
-     box-shadow: inset 0 1px 1px rgb(107, 61, 1);
-    border-color:  rgb(88, 54, 9) rgb(66, 38, 1) rgb(36, 21, 1);
+    border: 1px solid rgb(36, 21, 1);
 }
 
 
@@ -279,6 +276,14 @@ background-image: url("../images/page.jpg");
     color: black;
     font-weight: 700;
 }
+
+#statsNewGame:hover,
+#statsNewGame:focus {
+    background-color: rgb(66, 38, 1);
+    box-shadow: inset 0 1px 1px rgb(107, 61, 1);
+    border-color:  rgb(88, 54, 9) rgb(66, 38, 1) rgb(36, 21, 1);
+}
+
 
 .icon {
     color: #377a1a;
