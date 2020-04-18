@@ -58,26 +58,8 @@
          </div>
       </div>
       <!------------------------------------>
-      <!---------------Flashcards Modal-------------------->
-      <!-- Trigger/Open The Modal -->
-      <!-- The Modal -->
-      <div id="flashcardModal" class="modal flashcard">
-         <!-- Modal content -->
-         <div class="center modal-content">
-            <div class="modal-header modalheader">
-               <span id="flashcardNum">?/?</span>
-               <h2 class="heading-modal">Flashcard</h2>
-            </div>
-            <div class="modal-body">
-               <p id="flashcard1">Flashcard Word:</p>
-            </div>
-            <div class="modal-footer modalfooter">
-               <button id="nextWord" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="nextFlashCard()">Next</button>
-               <button id="start" class="btn btn-success modalbtn modalbtnright modalbtn-pref" onclick="closeFlashcards(), resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
-            </div>
-         </div>
-      </div>
-      <!------------------------------------>
+      
+    
       <!---<button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
          --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
       <div id="gameboardBackground" class="container-fluid container" style="display: none">
@@ -183,6 +165,47 @@
             </div>
          </div>
       </footer>
+
+      <!---------------LevelUp Modal-------------------->
+    
+      <!-- The Modal -->
+      <div id="levelModal" class="modal flashcard">
+         <!-- Modal content -->
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <span id="flashcardNum">?/?</span>
+               <h2 class="heading-modal">Flashcard</h2>
+            </div>
+            <div class="modal-body">
+               <p id="flashcard1">Flashcard Word:</p>
+            </div>
+            <div class="modal-footer modalfooter">
+               <button id="nextWord" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="nextFlashCard()">Next</button>
+               <button id="start" class="btn btn-success modalbtn modalbtnright modalbtn-pref" onclick="closeFlashcards(), resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
+            </div>
+         </div>
+      </div>
+      <!------------------------------------>
+      <!---------------RoundUp Modal-------------------->
+    
+      <!-- The Modal -->
+      <div id="roundModal" class="modal flashcard">
+         <!-- Modal content -->
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <span id="">?/?</span>
+               <h2 class="heading-modal">Flashcard</h2>
+            </div>
+            <div class="modal-body">
+               <p id="flashcard1">Flashcard Word:</p>
+            </div>
+            <div class="modal-footer modalfooter">
+               <button id="nextWord" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="nextFlashCard()">Next</button>
+               <button id="start" class="btn btn-success modalbtn modalbtnright modalbtn-pref" onclick="closeFlashcards(), resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
+            </div>
+         </div>
+      </div>
+      <!------------------------------------>
       <!--Bootstrap links-->
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
