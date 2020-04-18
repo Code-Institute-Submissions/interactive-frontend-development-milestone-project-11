@@ -108,6 +108,8 @@ class FlashCards {
         this.currentWordIndex = 0;
         this.level = parseInt(sessionStorage.getItem("level"));
         this.lastWordIndex = (this.level*2);
+        this.wordNumberFlashcard = this.currentWordIndex + 1;
+        this.lastWordNumberFlashcard = this.lastWordIndex + 1;
     }
 
     displayCurrentWord() {
@@ -119,6 +121,14 @@ class FlashCards {
   	flashcard.currentWordIndex = flashcard.currentWordIndex + 1;
     }
 
+    wordNumberDisplay() {
+    return this.wordNumberFlashcard = this.currentWordIndex + 1;
+    }
+    
+    lastWordNumberDisplay() {
+    return this.lastWordNumberFlashcard = this.lastWordIndex + 1;
+    }
+
 }
 
 function showFlashcards(){
@@ -126,16 +136,18 @@ function showFlashcards(){
     console.log(flashcard);
     /*document.getElementById("flashcard").style.display = "block";*/
     document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
-    window.location.hash = "flashcard";
+    document.getElementById("flashcardNum").innerHTML = flashcard.wordNumberDisplay() + "/" + flashcard.lastWordNumberDisplay();
 }
 
 function nextFlashCard(){
     if (flashcard.currentWordIndex < flashcard.lastWordIndex-1){
         flashcard.incrementWordIndex();
         document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
+        document.getElementById("flashcardNum").innerHTML = flashcard.wordNumberDisplay() + "/" + flashcard.lastWordNumberDisplay();
     } else {
         flashcard.incrementWordIndex();
         document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
+        document.getElementById("flashcardNum").innerHTML = flashcard.wordNumberDisplay() + "/" + flashcard.lastWordNumberDisplay();
         $("#nextWord").hide();
         $("#start").show();
     }
