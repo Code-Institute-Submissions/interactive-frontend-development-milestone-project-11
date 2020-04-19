@@ -25,7 +25,7 @@ flashcards, level complete, round complete).
 As the target audience is writers, the colours resembling parchment (off-white) and ink (blues and black) were the main colour theme 
 for the game.
 
-###Images
+### Images
 For the background of the jumbotron on the home screen, an image of a fountain pen was chosen to keep with the writing theme. 
 A photo of parchement was used for the surface of the gameboard and a photo of a bookcase was the background of the gameboard.
 
@@ -110,7 +110,7 @@ The website was deployed using Github Pages. To do this, while in the github web
  the Settings Tab. Under the GitHub Pages section further down the page, is the option to choose Source. I switched the 
  default option of none to master branch. Then I retrieved the provided link to my deployed website.
 
-Link to Deployed Website: 
+Link to Deployed Website: https://erikan-ir.github.io/interactive-frontend-development-milestone-project/
 
 To run the project locally:
 1. Follow the link below to the project's Github repository page.
