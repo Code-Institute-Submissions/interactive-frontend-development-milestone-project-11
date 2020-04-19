@@ -66,6 +66,8 @@ function roundUp() {
     round++;
     console.log("New Round:" + round);
     sessionStorage.setItem("round", round);
+    document.getElementById("round").innerHTML = sessionStorage.getItem("round");
+    document.getElementById("score").innerHTML = sessionStorage.getItem("score");
     restartLevel();
     nextRoundGame();
 }
@@ -74,16 +76,18 @@ function roundUp() {
 function restartLevel(){
     let level = sessionStorage.getItem("level");
     console.log("Old Level:" + level);
-    level = 0;
+    level = 1;
     console.log("New Level:" + level);
     sessionStorage.setItem("level", level);
+    document.getElementById("level").innerHTML = sessionStorage.getItem("level");
 }
 
 function levelUp() {
     let level = parseInt(sessionStorage.getItem("level"));
     console.log("Old Level:" + level);
     if (level == 10) {
-        roundUp();
+        //roundUp();
+        showRoundModal();
     } else {
         level++;
         console.log("New Level:" + level);
@@ -254,7 +258,15 @@ function hideGameboard() {
 }
 
 function nextRoundGame() {
+    clearGameboard();
+    hideGameboard();
+    clearWords();
+    generateWords();
+    showFlashcards();
+}
 
+function clearWords () {
+    return words = [];
 }
 
 function clearText() {
@@ -271,7 +283,7 @@ function restartGame(){
     showFlashcards();
 }
 
-
+//---------------------------------------------------- Modals
 function openInstructions() {
   document.getElementById("instructionsModal").style.display = "block";
 }
