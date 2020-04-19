@@ -1,17 +1,20 @@
-/*
 let sourceData = [];
 
-getData();
+
+function areStringsEqual(string1, string2) {
+    return string1.trim() == string2.trim();
+}
+
 async function getData(){
     const response = await fetch('assets/csv/verbsPastTense.csv');
     const data = await response.text();
     console.log(data);
-    const objects = data.split('\n');
-    return sourceData = Object.values(objects); // ['b', 'c', 'a']
-    
+    sourceData = data.split('\n');
 }
-console.log(sourceData);*/
+getData();
+console.log(sourceData);
 
+/*
 const sourceData = ["fractured", "framed","franchised","frazzled","freaked","freckled","froze","freshened","frittered","lapped",
 "lapsed","larked","lashed","mended","mentored","mesmerized","peered","peeved","pegged","penalized","peppered","perched","metamorphosed",
 "mewed","microfilmed","migrated","lasted","frizzed","frothed","fudged","guffawed","gurgled","gulped","guttered","habited",
@@ -19,7 +22,7 @@ const sourceData = ["fractured", "framed","franchised","frazzled","freaked","fre
 "sought", "forgot", "ignored", "juggled", "thought", "felt", "caught", "rejoiced", "thrived", "dashed", "pranced", "slept", "fought", "crumbled", 
 "collapsed", "treasured", "silenced", "rose", "assigned", "allotted", "collected", "met", "traded", "assumed", "dipped",
 "tumbled", "stretched"];
-console.log(sourceData);
+console.log(sourceData);*/
 
 let words = [];
 
@@ -223,7 +226,7 @@ function checkAnswer() {
     gameboard.checkWord = (document.getElementById("text").value).toLowerCase();
     console.log(gameboard.checkWord);
     console.log(gameboard.currentAnswerWord());
-    if (gameboard.checkWord == gameboard.currentAnswerWord()) {
+    if (areStringsEqual(gameboard.checkWord, gameboard.currentAnswerWord()) == true) {
         console.log("That's correct!");
         let e = "span" + (gameboard.currentWordIndex + 1);
         document.getElementById(e).style.color = "black";
