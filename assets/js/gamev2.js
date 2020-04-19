@@ -314,7 +314,7 @@ function closeLevelModal() {
   document.getElementById("levelModal").style.display = "none";
 }
 
-showRoundModal();
+
 function showRoundModal() {
     document.getElementById("roundModal").style.display = "block";
     let rnd = parseInt(sessionStorage.getItem("round"));
