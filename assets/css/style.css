@@ -279,10 +279,24 @@ margin-right: 30px;
     text-align: center;
     font-size: 16px;
 }
-/*
-#nextLvlBtn
 
-#lvl-modal-newGame*/
+/*--------------------------------------------Modals - Round*/
+
+#rnd-modal-current {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#rnd-modal-score {
+    text-align: center;
+    font-size: 16px;
+}
+
+#rnd-modal-nextrnd {
+    text-align: center;
+    font-size: 16px;
+}
 
 /*--------------------------------------------Gameboard*/
 #gameboardBackground {

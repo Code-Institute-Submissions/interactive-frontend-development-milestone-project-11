@@ -212,6 +212,31 @@
     
       <!------------------------------------>
     
+
+      <!---------------RoundUp Modal-------------------->
+ 
+    
+      <!-- The Modal -->
+      <div id="roundModal" class="modal">
+         <!-- Modal content -->
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <h2 class="heading-modal">You've Completed All 10 Levels!</h2>
+            </div>
+            <div class="modal-body">
+               <p id="rnd-modal-current">Congratulations! You finished Round <span id="modalCurrentRound">?</span>!</p>
+               <p id="rnd-modal-score">Your score is: <span id="rmodalCurrentScore">?</span></p>
+               <p id="rnd-modal-nextrnd">Want to continue to Round <span id="modalNextRound">?</span>?</p>
+            </div>
+            <div class="modal-footer modalfooter">
+            <button id="rnd-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="restartGame(), closeRoundModal()">New Game</button>
+               <button id="nextRndBtn" class="btn modalbtn modalbtn-pref ml-auto modalbtnright" onclick="roundUp(), closeRoundModal()">Play</button>
+            </div>
+         </div>
+      </div>
+    
+      <!------------------------------------>
+
       <!------------------------------------>
       <!--Bootstrap links-->
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

@@ -296,5 +296,20 @@ function showLevelModal() {
 }
 
 function closeLevelModal() {
-  levelModal.style.display = "none";
+  document.getElementById("levelModal").style.display = "none";
+}
+
+showRoundModal();
+function showRoundModal() {
+    document.getElementById("roundModal").style.display = "block";
+    let rnd = parseInt(sessionStorage.getItem("round"));
+    let nextrnd = rnd + 1;
+    let score = sessionStorage.getItem("score");
+    document.getElementById("modalCurrentRound").innerHTML = rnd;
+    document.getElementById("rmodalCurrentScore").innerHTML = score;
+    document.getElementById("modalNextRound").innerHTML = nextrnd;
+}
+
+function closeRoundModal() {
+  document.getElementById("roundModal").style.display = "none";
 }
