@@ -1,5 +1,5 @@
+//----------------------------------------------------Get Data
 let sourceData = [];
-
 
 function areStringsEqual(string1, string2) {
     return string1.trim() == string2.trim();
@@ -13,17 +13,8 @@ async function getData(){
 }
 getData();
 console.log(sourceData);
-
-/*
-const sourceData = ["fractured", "framed","franchised","frazzled","freaked","freckled","froze","freshened","frittered","lapped",
-"lapsed","larked","lashed","mended","mentored","mesmerized","peered","peeved","pegged","penalized","peppered","perched","metamorphosed",
-"mewed","microfilmed","migrated","lasted","frizzed","frothed","fudged","guffawed","gurgled","gulped","guttered","habited",
-"hackled","haggled","fueled", "sliced", "searched", "jumped", "crashed", "creased", "dove", "ran", "danced", "booked", "threw", "needed", 
-"sought", "forgot", "ignored", "juggled", "thought", "felt", "caught", "rejoiced", "thrived", "dashed", "pranced", "slept", "fought", "crumbled", 
-"collapsed", "treasured", "silenced", "rose", "assigned", "allotted", "collected", "met", "traded", "assumed", "dipped",
-"tumbled", "stretched"];
-console.log(sourceData);*/
-
+//----------------------------------------------------/Get Data
+//----------------------------------------------------Generate Word List
 let words = [];
 
 function generateWords() {
@@ -36,19 +27,14 @@ function generateWords() {
     console.log(words);
     console.log(leftWords);
 }
-
-/*
-function switchButton(){
-    document.getElementById("NewGame1").style.display = "none";
-    document.getElementById("NewGame2").style.display = "block";
-}
-*/
-
+//----------------------------------------------------/Generate Word List
+//----------------------------------------------------Start Game
 function startGame() {
     setLevelRound();
     showFlashcards();
 }
-
+//----------------------------------------------------/Start Game
+//----------------------------------------------------Manage Stats
 function setLevelRound() {
     let level = 1;
     let round = 1;
@@ -75,7 +61,6 @@ function roundUp() {
     nextRoundGame();
 }
 
-
 function restartLevel(){
     let level = sessionStorage.getItem("level");
     console.log("Old Level:" + level);
@@ -89,7 +74,6 @@ function levelUp() {
     let level = parseInt(sessionStorage.getItem("level"));
     console.log("Old Level:" + level);
     if (level == 10) {
-        //roundUp();
         showRoundModal();
     } else {
         level++;
@@ -110,7 +94,8 @@ function scoreUp() {
     sessionStorage.setItem("score", score);
     document.getElementById("score").innerHTML = sessionStorage.getItem("score");
 }
-
+//----------------------------------------------------Manage Stats
+//----------------------------------------------------Flashcard Object
 class FlashCards {
     constructor() {
         this.words = words;
@@ -137,9 +122,9 @@ class FlashCards {
     lastWordNumberDisplay() {
     return this.lastWordNumberFlashcard = this.lastWordIndex + 1;
     }
-
 }
-
+//----------------------------------------------------/Flashcard Object
+//----------------------------------------------------Flashcard Logic
 function showFlashcards(){
     flashcard = new FlashCards();
     console.log(flashcard);
@@ -166,7 +151,8 @@ function resetFlashcard(){
     $("#nextWord").show();
     $("#start").hide();
 }
-
+//----------------------------------------------------/Flashcard Logic
+//----------------------------------------------------Gameboard Object
 class Gameboards {
     constructor() {
         this.checkWord = "temp_word";
@@ -184,11 +170,10 @@ class Gameboards {
         console.info(this.words[this.currentWordIndex]);
         return this.words[this.currentWordIndex];
     }
-
 }
-
+//----------------------------------------------------/Gameboard Object
+//----------------------------------------------------Gameboard Logic
 function showGameboard(){
-    /*document.getElementById("flashcard").style.display = "none";*/
     document.getElementById("callout").style.display = "none";
     document.getElementById("gameboardBackground").style.display = "block";
     document.getElementById("gameboard").style.display = "block";
@@ -210,7 +195,6 @@ function focusTextField(){
     document.getElementById("text").focus();
 }
 
-
 function waitingForEnterKey(){
     let input = document.getElementById("text");
     input/addEventListener("keyup", function(event){
@@ -222,7 +206,6 @@ function waitingForEnterKey(){
 }
 
 function checkAnswer() {
-    //console.log(document.getElementById(text1).value);
     gameboard.checkWord = (document.getElementById("text").value).toLowerCase();
     console.log(gameboard.checkWord);
     console.log(gameboard.currentAnswerWord());
@@ -235,7 +218,6 @@ function checkAnswer() {
         clearText();
         if (gameboard.currentWordIndex == gameboard.lastWordIndex) {
             showLevelModal();
-            //levelUp();
         } else {
             gameboard.incrementWordIndex();
         }
@@ -260,20 +242,21 @@ function hideGameboard() {
     document.getElementById("gameboard").style.display = "none";
 }
 
-function nextRoundGame() {
-    clearGameboard();
-    hideGameboard();
-    clearWords();
-    generateWords();
-    showFlashcards();
-}
-
 function clearWords () {
     return words = [];
 }
 
 function clearText() {
     document.getElementById("text").value = "";
+}
+//----------------------------------------------------Gameboard Logic
+//----------------------------------------------------General Game
+function nextRoundGame() {
+    clearGameboard();
+    hideGameboard();
+    clearWords();
+    generateWords();
+    showFlashcards();
 }
 
 function restartGame(){
@@ -285,8 +268,8 @@ function restartGame(){
     generateWords();
     showFlashcards();
 }
-
-//---------------------------------------------------- Modals
+//----------------------------------------------------/General Game
+//----------------------------------------------------Modals
 function openInstructions() {
   document.getElementById("instructionsModal").style.display = "block";
 }
@@ -294,7 +277,6 @@ function openInstructions() {
 function closeInstructions() {
   document.getElementById("instructionsModal").style.display = "none";
 }
-
 
 function closeFlashcards() {
   document.getElementById("flashcardModal").style.display = "none";
@@ -313,7 +295,6 @@ function showLevelModal() {
 function closeLevelModal() {
   document.getElementById("levelModal").style.display = "none";
 }
-
 
 function showRoundModal() {
     document.getElementById("roundModal").style.display = "block";
