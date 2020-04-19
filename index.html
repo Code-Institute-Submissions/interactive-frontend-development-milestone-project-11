@@ -30,7 +30,7 @@
                      <span class="d-inline d-sm-none"><br></span> 
                      <strong><mark>Sharpen your skills for free!</mark></strong>
                   </p>
-                  <button id="playBtn" class="btn btn-success btn-lg btn--jum">Play</button>
+                  <button id="playBtn" class="btn btn-success btn-lg btn--jum" onclick="openInstructions()">Play</button>
                </section>
             </div>
          </div>
@@ -53,7 +53,7 @@
                </ul>
             </div>
             <div class="modal-footer modalfooter">
-               <button id="nextBtn" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="closeInstructions(), generateWords(), startGame(), showFlashcardsModal(), showFlashcards()">Next</button>
+               <button id="nextBtn" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="closeInstructions(), generateWords(), startGame(), showFlashcards()">Next</button>
             </div>
          </div>
       </div>
@@ -203,7 +203,7 @@
                <p id="lvl-modal-nextlvl">Continue on to level <span id="modalNextLevel">?</span>?</p>
             </div>
             <div class="modal-footer modalfooter">
-            <button id="lvl-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="closeLevelModal()">New Game</button>
+            <button id="lvl-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="restartGame(), closeLevelModal()">New Game</button>
                <button id="nextLvlBtn" class="btn modalbtn modalbtn-pref ml-auto modalbtnright" onclick="levelUp(), closeLevelModal()">Play</button>
                
             </div>

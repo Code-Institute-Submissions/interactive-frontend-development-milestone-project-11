@@ -134,7 +134,7 @@ class FlashCards {
 function showFlashcards(){
     flashcard = new FlashCards();
     console.log(flashcard);
-    /*document.getElementById("flashcard").style.display = "block";*/
+    document.getElementById("flashcardModal").style.display = "block";
     document.getElementById("flashcard1").innerHTML = flashcard.displayCurrentWord();
     document.getElementById("flashcardNum").innerHTML = flashcard.wordNumberDisplay() + "/" + flashcard.lastWordNumberDisplay();
 }
@@ -193,7 +193,7 @@ function showSpaces(){
         console.log(e);
         document.getElementById(e).style.display = "block";
     } 
-    focusTextField();
+    //focusTextField();
     waitingForEnterKey();
 }
 
@@ -270,47 +270,27 @@ function restartGame(){
 }
 
 
-// InstructionModal JS
-var instructionsModal = document.getElementById("instructionsModal");
-
-// Get the button that opens the modal
-var playbtn = document.getElementById("playBtn");
-
-
-// When the user clicks on the button, open the modal
-playbtn.onclick = function() {
-  instructionsModal.style.display = "block";
+function openInstructions() {
+  document.getElementById("instructionsModal").style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
 function closeInstructions() {
-  instructionsModal.style.display = "none";
+  document.getElementById("instructionsModal").style.display = "none";
 }
 
 
-// FlashcardModal JS
-var flashcardModal = document.getElementById("flashcardModal");
-
-// Get the button that opens the modal
-var nextBtn = document.getElementById("nextBtn");
-
-function showFlashcardsModal() {
-  flashcardModal.style.display = "block";
-}
 function closeFlashcards() {
-  flashcardModal.style.display = "none";
+  document.getElementById("flashcardModal").style.display = "none";
 }
-
-var levelModal = document.getElementById("levelModal");
 
 function showLevelModal() {
-    levelModal.style.display = "block";
-    let level = parseInt(sessionStorage.getItem("level"));
-    let nextlevel = level + 1;
+    document.getElementById("levelModal").style.display = "block";
+    let lvl = parseInt(sessionStorage.getItem("level"));
+    let nextlvl = lvl + 1;
     let score = sessionStorage.getItem("score");
-    document.getElementById("modalCurrentLevel").innerHTML = level;
+    document.getElementById("modalCurrentLevel").innerHTML = lvl;
     document.getElementById("modalCurrentScore").innerHTML = score;
-    document.getElementById("modalNextLevel").innerHTML = nextlevel;
+    document.getElementById("modalNextLevel").innerHTML = nextlvl;
 }
 
 function closeLevelModal() {
