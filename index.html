@@ -13,34 +13,39 @@
       <title>Verbs Game</title>
    </head>
    <body>
+      <!--Header-->
       <header>
          <div class="navbar">
             <h1>To Verb!</h1>
             <p>Strong Verbs for Stronger Writing</p>
          </div>
       </header>
-      <div id="callout" class="container-fluid callout-container">
-         <div class="opaque-overlay"></div>
-         <div class="row">
-            <div class="col-12">
-               <section class="callout jumbotron text-center">
-                  <h1 class="jumbotron-header"><span id="callout-upper"> Strengthen <br class="d-sm-none"> your writing </span>
-                  <br class="d-sm-none"> <hr id="hr--callout" class="block-divider"> <span id="callout-lower">with a simple <br class="d-sm-none"> game.</span></h1>
-                  <hr class="block-divider">
-                  <p class="lead"> <span id="callout--p"> Sharpen skills & break writer's block </span>
-                  <br class="d-sm-none">
-                     <span><strong>Train for free!</strong></span>
-                  </p>
-                  <button id="playBtn" class="btn btn-success btn-lg btn--jum" onclick="openInstructions()">Play</button>
-               </section>
+      <!--Jumbotron-->
+      <section>
+         <div id="callout" class="container-fluid callout-container">
+            <div class="opaque-overlay"></div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="callout jumbotron text-center">
+                     <div id="callout-header" class="jumbotron-header">
+                        <span id="callout-upper"> Strengthen <br class="d-sm-none"> your writing </span>
+                        <br class="d-sm-none"> 
+                        <hr id="hr--callout" class="block-divider">
+                        <span id="callout-lower">with a simple <br class="d-sm-none"> game.</span>
+                     </div>
+                     <hr id="callout-middle" class="block-divider">
+                     <p class="lead"> <span id="callout--p"> Sharpen skills & break writer's block </span>
+                        <br class="d-sm-none">
+                        <span><strong>Train for free!</strong></span>
+                     </p>
+                     <button id="playBtn" class="btn btn-success btn-lg btn--jum" onclick="openInstructions()">Play</button>
+                  </div>
+               </div>
             </div>
          </div>
-      </div>
-      <!---------------Intructions Modal-------------------->
-      <!-- Trigger/Open The Modal -->
-      <!-- The Modal -->
+      </section>
+      <!--Intructions Modal-->
       <div id="instructionsModal" class="modal">
-         <!-- Modal content -->
          <div class="center modal-content">
             <div class="modal-header modalheader">
                <h2 class="heading-modal">Instructions</h2>
@@ -58,12 +63,8 @@
             </div>
          </div>
       </div>
-      <!------------------------------------>
-        <!---------------Flashcard Modal-------------------->
-    
-      <!-- The Modal -->
+      <!--Flashcard Modal-->
       <div id="flashcardModal" class="modal flashcard">
-         <!-- Modal content -->
          <div class="center modal-content">
             <div class="modal-header modalheader">
                <span id="flashcardNum">?/?</span>
@@ -78,108 +79,106 @@
             </div>
          </div>
       </div>
-    
-      <!---<button id="NewGame1" onclick="switchButton(), generateWords(), startGame()">New Game</button>
-         --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
-      
-      <div id="gameboardBackground" class="container-fluid container" style="display: none">
-        <div class= "row">
-        <div id="gameboard" class="container-fluid" style="display: none">
-         <div id="scoreboard" class="row no-gutters">
-            <div class="container-fluid col col-12">
-            
-               <div id="scorestat" class= "stats">Score: <span id="score" class="stats-data"></span></div>
-               <div id="levelstat" class= "stats">Level: <span id="level" class="stats-data"></span></div>
-               <div id="roundstat" class= "stats">Round: <span id="round" class="stats-data"></span></div>
-               <button id="statsNewGame" class="btn modalbtn modalbtn-non-pref" onclick="restartGame()">New Game</button>
+      <!--Gameboard-->
+      <section>
+         <div id="gameboardBackground" class="container-fluid container" style="display: none">
+            <div class= "row">
+               <div id="gameboard" class="container-fluid" style="display: none">
+                  <div id="scoreboard" class="row no-gutters">
+                     <div class="container-fluid col col-12">
+                        <div id="scorestat" class= "stats">Score: <span id="score" class="stats-data"></span></div>
+                        <div id="levelstat" class= "stats">Level: <span id="level" class="stats-data"></span></div>
+                        <div id="roundstat" class= "stats">Round: <span id="round" class="stats-data"></span></div>
+                        <button id="statsNewGame" class="btn modalbtn modalbtn-non-pref" onclick="restartGame()">New Game</button>
+                     </div>
+                  </div>
+                  <div class="container-fluid gameboard-contents">
+                     <div class="row">
+                        <div id="wordList">
+                           <h2>Word List:</h2>
+                        </div>
+                     </div>
+                     <div class="row word--row">
+                        <div id="first-col" class="col col-4 col-sm-3 col-words">
+                           <div id="word1" class="word" style="display:none">
+                              1. <span id="span1">______</span>
+                           </div>
+                           <div id="word2" class="word" style="display:none">
+                              2. <span id="span2">______</span>
+                           </div>
+                           <div id="word3" class="word" style="display:none">
+                              3. <span id="span3">______</span>
+                           </div>
+                           <div id="word4" class="word" style="display:none">
+                              4. <span id="span4">______</span>
+                           </div>
+                           <div id="word5" class="word" style="display:none">
+                              5. <span id="span5">______</span>
+                           </div>
+                           <div id="word6" class="word" style="display:none">
+                              6. <span id="span6">______</span>
+                           </div>
+                           <div id="word7" class="word" style="display:none">
+                              7. <span id="span7">______</span>
+                           </div>
+                        </div>
+                        <div id="second-col" class="col col-4 col-sm-3 col-words">
+                           <div id="word8" class="word" style="display:none">
+                              8. <span id="span8">______</span>
+                           </div>
+                           <div id="word9" class="word" style="display:none">
+                              9. <span id="span9">______</span>
+                           </div>
+                           <div id="word10" class="word" style="display:none">
+                              10. <span id="span10">______</span>
+                           </div>
+                           <div id="word11" class="word" style="display:none">
+                              11. <span id="span11">______</span>
+                           </div>
+                           <div id="word12" class="word" style="display:none">
+                              12. <span id="span12">______</span>
+                           </div>
+                           <div id="word13" class="word" style="display:none">
+                              13. <span id="span13">______</span>
+                           </div>
+                           <div id="word14" class="word" style="display:none">
+                              14. <span id="span14">______</span>
+                           </div>
+                        </div>
+                        <div id="third-col" class="col col-4 col-sm-3 col-words">
+                           <div id="word15" class="word" style="display:none">
+                              15. <span id="span15">______</span>
+                           </div>
+                           <div id="word16" class="word" style="display:none">
+                              16. <span id="span16">______</span>
+                           </div>
+                           <div id="word17" class="word" style="display:none">
+                              17. <span id="span17">______</span>
+                           </div>
+                           <div id="word18" class="word" style="display:none">
+                              18. <span id="span18">______</span>
+                           </div>
+                           <div id="word19" class="word" style="display:none">
+                              19. <span id="span19">______</span>
+                           </div>
+                           <div id="word20" class="word" style="display:none">
+                              20. <span id="span20">______</span>
+                           </div>
+                           <div id="word21" class="word" style="display:none">
+                              21. <span id="span21">______</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <input type="text" id="text" class="writing" placeholder="Type something...">
+                        <input type="button" class="check-answer btn modalbtn modalbtn-non-pref" id="check-answer" value="Check" onclick ="checkAnswer()">
+                     </div>
+                  </div>
+               </div>
             </div>
-            
          </div>
-         <div class="container-fluid gameboard-contents">
-            <div class="row">
-               <div id="wordList">
-                  <h2>Word List:</h2>
-               </div>
-            </div>
-            <div class="row word--row">
-            <div id="first-col" class="col col-4 col-sm-3 col-words">
-               <div id="word1" class="word" style="display:none">
-                  1. <span id="span1">______</span>
-               </div>
-               <div id="word2" class="word" style="display:none">
-                  2. <span id="span2">______</span>
-               </div>
-               <div id="word3" class="word" style="display:none">
-                  3. <span id="span3">______</span>
-               </div>
-               <div id="word4" class="word" style="display:none">
-                  4. <span id="span4">______</span>
-               </div>
-               <div id="word5" class="word" style="display:none">
-                  5. <span id="span5">______</span>
-               </div>
-               <div id="word6" class="word" style="display:none">
-                  6. <span id="span6">______</span>
-               </div>
-               <div id="word7" class="word" style="display:none">
-                  7. <span id="span7">______</span>
-               </div>
-            </div>
-            <div id="second-col" class="col col-4 col-sm-3 col-words">
-               <div id="word8" class="word" style="display:none">
-                  8. <span id="span8">______</span>
-               </div>
-               <div id="word9" class="word" style="display:none">
-                  9. <span id="span9">______</span>
-               </div>
-               <div id="word10" class="word" style="display:none">
-                  10. <span id="span10">______</span>
-               </div>
-               <div id="word11" class="word" style="display:none">
-                  11. <span id="span11">______</span>
-               </div>
-               <div id="word12" class="word" style="display:none">
-                  12. <span id="span12">______</span>
-               </div>
-               <div id="word13" class="word" style="display:none">
-                  13. <span id="span13">______</span>
-               </div>
-               <div id="word14" class="word" style="display:none">
-                  14. <span id="span14">______</span>
-               </div>
-            </div>
-            <div id="third-col" class="col col-4 col-sm-3 col-words">
-               <div id="word15" class="word" style="display:none">
-                  15. <span id="span15">______</span>
-               </div>
-               <div id="word16" class="word" style="display:none">
-                  16. <span id="span16">______</span>
-               </div>
-               <div id="word17" class="word" style="display:none">
-                  17. <span id="span17">______</span>
-               </div>
-               <div id="word18" class="word" style="display:none">
-                  18. <span id="span18">______</span>
-               </div>
-               <div id="word19" class="word" style="display:none">
-                  19. <span id="span19">______</span>
-               </div>
-               <div id="word20" class="word" style="display:none">
-                  20. <span id="span20">______</span>
-               </div>
-               <div id="word21" class="word" style="display:none">
-                  21. <span id="span21">______</span>
-               </div>
-            </div>
-            </div>
-            <div class="row">
-               <input type="text" id="text" class="writing" placeholder="Type something...">
-               <input type="button" class="check-answer btn modalbtn modalbtn-non-pref" id="check-answer" value="Check" onclick ="checkAnswer()">
-            </div>
-         </div>
-      </div>
-      </div>
-      </div>
+      </section>
+      <!--Footer-->
       <footer class="container-fluid bg-color-footer">
          <div class="row">
             <div class="col ml-auto">
@@ -187,13 +186,8 @@
             </div>
          </div>
       </footer>
-
-      <!---------------LevelUp Modal-------------------->
- 
-    
-      <!-- The Modal -->
+      <!--LevelUp Modal-->
       <div id="levelModal" class="modal">
-         <!-- Modal content -->
          <div class="center modal-content">
             <div class="modal-header modalheader">
                <h2 class="heading-modal">Congratulations!</h2>
@@ -204,22 +198,13 @@
                <p id="lvl-modal-nextlvl">Continue on to level <span id="modalNextLevel">?</span>?</p>
             </div>
             <div class="modal-footer modalfooter">
-            <button id="lvl-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="restartGame(), closeLevelModal()">New Game</button>
+               <button id="lvl-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="restartGame(), closeLevelModal()">New Game</button>
                <button id="nextLvlBtn" class="btn modalbtn modalbtn-pref ml-auto modalbtnright" onclick="levelUp(), closeLevelModal()">Play</button>
-               
             </div>
          </div>
       </div>
-    
-      <!------------------------------------>
-    
-
-      <!---------------RoundUp Modal-------------------->
- 
-    
-      <!-- The Modal -->
+      <!--RoundUp Modal-->
       <div id="roundModal" class="modal">
-         <!-- Modal content -->
          <div class="center modal-content">
             <div class="modal-header modalheader">
                <h2 class="heading-modal">You've Completed All 10 Levels!</h2>
@@ -230,22 +215,18 @@
                <p id="rnd-modal-nextrnd">Want to continue to Round <span id="modalNextRound">?</span>?</p>
             </div>
             <div class="modal-footer modalfooter">
-            <button id="rnd-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="restartGame(), closeRoundModal()">New Game</button>
+               <button id="rnd-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="restartGame(), closeRoundModal()">New Game</button>
                <button id="nextRndBtn" class="btn modalbtn modalbtn-pref ml-auto modalbtnright" onclick="roundUp(), closeRoundModal()">Play</button>
             </div>
          </div>
       </div>
-    
-      <!------------------------------------>
-
-      <!------------------------------------>
       <!--Bootstrap links-->
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <!--/Bootstrap links-->
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="assets/js/gamev2.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="assets/js/gamev2.js"></script>
    </body>
 </html>

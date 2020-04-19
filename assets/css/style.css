@@ -56,7 +56,6 @@ font-family: 'Itim', cursive;
     margin-left: 7px;
 }
 
-
 #hr--callout {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -108,8 +107,22 @@ font-family: 'Itim', cursive;
     text-shadow: 2px 2px 3px black; 
     margin-bottom: 0px;
 }
-.callout h1 {
+
+#callout-upper {
+    font-family: 'Fredericka the Great', cursive;
     font-weight: 500;
+    font-size: 32px;
+}
+
+#callout-lower {
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+#callout-middle {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /*-------------------------------------------Structure From Facebook Button*/
