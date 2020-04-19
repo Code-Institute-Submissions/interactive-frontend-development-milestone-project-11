@@ -250,9 +250,10 @@ font-family: 'Itim', cursive;
     color:#150d79fd;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
    #flashcardModal .modal-content{
     max-width: 500px;
+
 }
 }
 
