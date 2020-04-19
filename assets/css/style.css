@@ -1,0 +1,545 @@
+ 
+/*--------------------------------------------Font Links*/
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Tangerine:wght@400;700&display=swap');
+/*---------------------------------------------/Font Links*/
+/*---------------------------------------------General*/
+body {
+    background-color:rgb(4, 1, 19); 
+}
+
+.writing {
+font-family: 'Tangerine', cursive;
+font-size: 32px;
+font-weight: 900;
+letter-spacing: 2px;
+text-shadow: 0.3px 0.3px 1px rgb(6, 2, 26);
+color: rgb(18, 7, 80);
+}
+
+
+.word {
+    font-family: 'Nixie One', cursive; 
+font-weight:700;
+}
+
+
+h1,h2,.btn {
+font-family: 'Fredericka the Great', cursive;
+font-weight: 500;
+}
+
+.flashcard {
+font-family: 'Itim', cursive;
+}
+
+/*-------------------------------------------/General*/
+/*-------------------------------------------Navbar*/
+.navbar {
+    background-image: linear-gradient(rgb(4, 1, 19), rgba(8, 8, 37, 0.945));
+    color: #f5dd8e;
+    text-shadow: 2px 2px 5px black; 
+}
+
+.navbar h1 {
+    margin-top: 15px;
+    margin-left: 7px;
+}
+
+.navbar p {
+    margin-left: 7px;
+}
+
+@media (min-width: 768px) {
+.navbar p {
+    margin-top: 15px;
+}
+}
+
+@media (min-width: 992px) {
+.navbar p {
+    margin-right: 50px;
+}
+}
+/*--------------------------------------------/Navbar*/
+/*--------------------------------------------Callout*/
+#hr--callout {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.callout-container {
+    height: 100vh;
+  background: url("../images/pen.jpg") no-repeat center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.15);
+}
+
+.callout {
+    background-color: transparent;
+    color: rgb(252, 245, 224);
+    font-weight: 500;
+    text-shadow: 2px 2px 3px black; 
+    margin-bottom: 0px;
+}
+
+#callout-upper {
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+#callout-lower {
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+#callout-middle {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/*---Structure From Facebook Button*/
+.btn--jum {
+    text-shadow: 1px 1px 1px rgb(24, 48, 22); 
+    background: linear-gradient(#3b8628, #193b0c);
+    background-color: #377a1a;
+    box-shadow: inset 0 1px 1px #7ebb64;
+    border-color: #2b4e1a #274916 #112405;
+}
+/*---Structure From Facebook Button*/
+/*--------------------------------------------/Callout*/
+/*--------------------------------------------Modals - General*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modalheader {
+    justify-content: center;
+    padding: 10px 16px;
+    border: none;
+    display: inline;
+}
+
+.modalheader h2 {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.instruction-ul{
+    margin-left: 5px;
+    padding-left: 20px;
+    width: 95%;
+}
+
+.instruction-li{
+    padding-bottom: 15px;
+}
+
+@media (min-width: 992px) {
+.instruction-ul{
+    margin-left: 5px;
+    padding-left: 40px;
+    width: 95%;
+}
+.instruction-li{
+    padding-bottom: 25px;
+}
+}
+
+.modalfooter {
+  padding: 2px 16px;
+   border: none;
+}
+
+
+.modal-content {
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  background-color: rgb(255, 242, 210);
+  color: rgb(18, 7, 80);
+  }
+
+@media (min-width: 992px) {
+.modal-content {
+    max-width: 50%;
+    color: rgb(18, 7, 80);
+}
+}
+
+  .modalbtnright {
+    margin-bottom: 30px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+
+.modalbtnleft {
+    margin-bottom: 25px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+  }
+
+.modalbtn-pref {
+    color: rgb(255, 242, 210);
+    text-shadow: 1px 1px 1px rgb(24, 48, 22); 
+    background: linear-gradient(#3b8628, #193b0c);
+    background-color: #377a1a;
+    box-shadow: inset 0 1px 1px #7ebb64;
+    border-color: #2b4e1a #274916 #112405;
+}
+
+.modalbtn-non-pref {
+    color: rgb(255, 242, 210);
+    background-color: rgba(110, 63, 1, 0.815);
+    box-shadow: inset 0 1px 1px #8f6406;
+    border-color: #8f6406 #583e04 #382703;
+}
+
+.modalbtn:hover,
+.modalbtn:focus {
+  color: rgb(255, 242, 210);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalbtn-non-pref:hover,
+.modalbtn-non-pref:focus {
+    border: 1px solid rgb(36, 21, 1);
+}
+
+@media (min-width: 768px) {
+.modalbtnleft {
+margin-left: 30px;
+}
+.modalbtnright{
+margin-right: 30px;
+}
+}
+@media (min-width: 768px) {
+.modal-content{
+    width: 60%;
+}
+.modal-body {
+    padding-left: 45px;
+    padding-right: 40px;
+}
+
+.instruction-ul {
+    margin-bottom: 0px;
+}
+}
+
+@media (min-width: 992px) {
+   .modal-content{
+    max-width: 630px;
+}
+}
+/*--------------------------------------------/Modals - General*/
+/*--------------------------------------------Modals - Flashcard*/
+
+#flashcardNum {
+    text-align: right;
+    font-size: 16px;
+    display: inline;
+    justify-content: right;
+    color:#150d79fd;
+    margin-left: 15px;
+}
+
+#flashcard1 {
+    font-size: 30px;
+    text-align: center;
+    color:#150d79fd;
+}
+
+@media (min-width: 768px) {
+   #flashcardModal .modal-content{
+    max-width: 500px;
+}
+}
+/*--------------------------------------------Modals - Flashcard*/
+/*--------------------------------------------Modals - Level*/
+
+#lvl-modal-current {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+#lvl-modal-score{
+    text-align: center;
+    font-size: 16px;
+}
+
+#lvl-modal-nextlvl{
+    text-align: center;
+    font-size: 16px;
+}
+/*--------------------------------------------/Modals - Level*/
+/*--------------------------------------------Modals - Round*/
+#rnd-modal-current {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#rnd-modal-score {
+    text-align: center;
+    font-size: 16px;
+}
+
+#rnd-modal-nextrnd {
+    text-align: center;
+    font-size: 16px;
+}
+/*--------------------------------------------/Modals - Round*/
+/*--------------------------------------------Gameboard*/
+#gameboardBackground {
+background-image: url("../images/bookcasebottom.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  min-width: 100%;
+
+}
+
+#gameboard{
+background-image: url("../images/page.jpg");
+    width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0;
+
+}
+
+#scoreboard {
+    background-color: rgba(80, 53, 18, 0.3);
+    color: rgb(255, 242, 210);
+}
+
+.stats {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 20px;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.stats-data {
+    color: black;
+    font-weight: 700;
+}
+
+#statsNewGame {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#statsNewGame:hover,
+#statsNewGame:focus {
+    background-color: rgb(66, 38, 1);
+    box-shadow: inset 0 1px 1px rgb(107, 61, 1);
+    border-color:  rgb(88, 54, 9) rgb(66, 38, 1) rgb(36, 21, 1);
+}
+
+#wordList {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.icon {
+    color: #377a1a;
+    padding-left: 10px;
+}
+
+.word--row {
+    margin: 0;
+}
+
+#text {
+    margin-left: 20px;
+    margin-right: 0px;
+    margin-top: 14px;
+    height: calc(1.5em + .75rem + 2px);
+    padding: 0rem .75rem;
+    font-size: 1.8rem;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 0.5px solid rgb(18, 7, 80, 0.5);
+    border-width: 1.5px;
+    outline-color: rgb(18, 7, 80, 0.1);
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#check-answer{
+    height: calc(1.5em + .75rem + 2px);
+    margin-top: 14px;
+    margin-left: 20px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    color: #f1d578b4;
+    background: linear-gradient(#0f12357a, #05032273);
+    background-color: #060b29d8;
+    box-shadow: inset 0 1px 1px #0e0f61d8;
+    border-color: #191364 #0a1441 #04031dcb;
+    font-family: 'Tangerine', cursive;
+    font-size: 28px;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    padding-right: 18px;
+    font-weight: 700;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+
+#check-answer:hover,
+#check-answer:focus {
+    color: yellow;
+}
+
+.col-words {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 0px;
+    font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+#gameboard {
+    max-width: 700px;
+    width: 80%;
+    margin-top: 10%;
+    display: block;
+    min-height: 30vh;
+}
+}
+
+@media (min-width: 768px) {
+.stats-data{
+    margin-left: 8px;
+}
+}
+
+@media (min-width: 768px) {
+.stats{
+    margin-left: 35px;
+}
+}
+
+@media (min-width: 768px) {
+#statsNewGame{
+    margin-left: 60px;
+}
+}
+
+@media (min-width: 768px) {
+#wordList {
+    margin-left: 45px;
+}
+}
+
+@media (min-width: 768px) {
+#text {
+    margin-top: 24px;
+    margin-left: 40px;
+}
+}
+
+@media (min-width: 768px) {
+#check-answer{
+    margin-top: 24px;
+}
+}
+
+@media (min-width: 768px) {
+#first-col{
+    margin-left: 30px;
+}
+
+#second-col{
+    margin-left: 50px;
+}
+
+#third-col{
+    margin-left: 50px;
+}
+}
+
+@media (min-width: 800px) {
+.stats{
+    margin-left: 40px;
+}
+}
+
+@media (min-width: 800px) {
+#statsNewGame{
+    margin-left: 70px;
+}
+}
+
+.word {
+    display: inline-block;
+    padding-top: 5px;
+}
+/*--------------------------------------------/Gameboard*/
+/*--------------------------------------------Footer*/
+footer {
+    background-image: linear-gradient(rgb(4, 1, 19), rgba(8, 8, 37, 0.945));
+    color: #f5dd8e;
+    text-shadow: 2px 2px 5px black; 
+}
+
+.sm--font {
+    font-size: 0.8rem;
+    margin-top: 15px;
+}
+/*--------------------------------------------/Footer*/

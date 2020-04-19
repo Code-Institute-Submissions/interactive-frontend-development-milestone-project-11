@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css">
+      <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <title>Verbs Game</title>
+   </head>
+   <body>
+      <!--Header-->
+      <header>
+         <div class="navbar">
+            <h1>To Verb!</h1>
+            <p>Strong Verbs for Stronger Writing</p>
+         </div>
+      </header>
+      <!--/Header-->
+      <!--Jumbotron-->
+      <section>
+         <div id="callout" class="container-fluid callout-container">
+            <div class="opaque-overlay"></div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="callout jumbotron text-center">
+                     <div id="callout-header" class="jumbotron-header">
+                        <span id="callout-upper"> Strengthen <br class="d-sm-none"> your writing </span>
+                        <br class="d-sm-none"> 
+                        <hr id="hr--callout" class="block-divider">
+                        <span id="callout-lower">with a simple <br class="d-sm-none"> game.</span>
+                     </div>
+                     <hr id="callout-middle" class="block-divider">
+                     <p class="lead"> <span id="callout--p"> Sharpen skills & break writer's block </span>
+                        <br class="d-sm-none">
+                        <span><strong>Train for free!</strong></span>
+                     </p>
+                     <button id="playBtn" class="btn btn-success btn-lg btn--jum" onclick="openInstructions()">Play</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/Jumbotron-->
+      <!--Intructions Modal-->
+      <div id="instructionsModal" class="modal">
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <h2 class="heading-modal">Instructions</h2>
+            </div>
+            <div class="modal-body">
+               <ul class="instruction-ul">
+                  <li class="instruction-li">Memorise the word and their order on each flashcard</li>
+                  <li class="instruction-li">Click <strong>Start</strong> to test your memory</li>
+                  <li class="instruction-li">Type your answer in the field at bottom of the Gameboard </li>
+                  <li class="instruction-li">Press <strong>Enter</strong> on your keyboard or click <strong>Check</strong> to see if you're right!</li>
+               </ul>
+            </div>
+            <div class="modal-footer modalfooter">
+               <button id="nextBtn" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="closeInstructions(), generateWords(), startGame(), showFlashcards()">Next</button>
+            </div>
+         </div>
+      </div>
+      <!--/Intructions Modal-->
+      <!--Flashcard Modal-->
+      <div id="flashcardModal" class="modal flashcard">
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <span id="flashcardNum">?/?</span>
+               <h2 class="heading-modal">Flashcard</h2>
+            </div>
+            <div class="modal-body">
+               <p id="flashcard1">Flashcard Word:</p>
+            </div>
+            <div class="modal-footer modalfooter">
+               <button id="nextWord" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="nextFlashCard()">Next</button>
+               <button id="start" class="btn btn-success modalbtn modalbtnright modalbtn-pref" onclick="closeFlashcards(), resetFlashcard(), showGameboard(), showSpaces()" style="display:none">Start</button>
+            </div>
+         </div>
+      </div>
+      <!--/Flashcard Modal-->
+      <!--Gameboard-->
+      <section>
+         <div id="gameboardBackground" class="container-fluid container" style="display: none">
+            <div class= "row">
+               <div id="gameboard" class="container-fluid" style="display: none">
+                  <div id="scoreboard" class="row no-gutters">
+                     <div class="container-fluid col col-12">
+                        <div id="scorestat" class= "stats">Score: <span id="score" class="stats-data"></span></div>
+                        <div id="levelstat" class= "stats">Level: <span id="level" class="stats-data"></span></div>
+                        <div id="roundstat" class= "stats">Round: <span id="round" class="stats-data"></span></div>
+                        <button id="statsNewGame" class="btn modalbtn modalbtn-non-pref" onclick="restartGame()">New Game</button>
+                     </div>
+                  </div>
+                  <div class="container-fluid gameboard-contents">
+                     <div class="row">
+                        <div id="wordList">
+                           <h2>Word List:</h2>
+                        </div>
+                     </div>
+                     <div class="row word--row">
+                        <div id="first-col" class="col col-4 col-sm-3 col-words">
+                           <div id="word1" class="word" style="display:none">
+                              1. <span id="span1">______</span>
+                           </div>
+                           <div id="word2" class="word" style="display:none">
+                              2. <span id="span2">______</span>
+                           </div>
+                           <div id="word3" class="word" style="display:none">
+                              3. <span id="span3">______</span>
+                           </div>
+                           <div id="word4" class="word" style="display:none">
+                              4. <span id="span4">______</span>
+                           </div>
+                           <div id="word5" class="word" style="display:none">
+                              5. <span id="span5">______</span>
+                           </div>
+                           <div id="word6" class="word" style="display:none">
+                              6. <span id="span6">______</span>
+                           </div>
+                           <div id="word7" class="word" style="display:none">
+                              7. <span id="span7">______</span>
+                           </div>
+                        </div>
+                        <div id="second-col" class="col col-4 col-sm-3 col-words">
+                           <div id="word8" class="word" style="display:none">
+                              8. <span id="span8">______</span>
+                           </div>
+                           <div id="word9" class="word" style="display:none">
+                              9. <span id="span9">______</span>
+                           </div>
+                           <div id="word10" class="word" style="display:none">
+                              10. <span id="span10">______</span>
+                           </div>
+                           <div id="word11" class="word" style="display:none">
+                              11. <span id="span11">______</span>
+                           </div>
+                           <div id="word12" class="word" style="display:none">
+                              12. <span id="span12">______</span>
+                           </div>
+                           <div id="word13" class="word" style="display:none">
+                              13. <span id="span13">______</span>
+                           </div>
+                           <div id="word14" class="word" style="display:none">
+                              14. <span id="span14">______</span>
+                           </div>
+                        </div>
+                        <div id="third-col" class="col col-4 col-sm-3 col-words">
+                           <div id="word15" class="word" style="display:none">
+                              15. <span id="span15">______</span>
+                           </div>
+                           <div id="word16" class="word" style="display:none">
+                              16. <span id="span16">______</span>
+                           </div>
+                           <div id="word17" class="word" style="display:none">
+                              17. <span id="span17">______</span>
+                           </div>
+                           <div id="word18" class="word" style="display:none">
+                              18. <span id="span18">______</span>
+                           </div>
+                           <div id="word19" class="word" style="display:none">
+                              19. <span id="span19">______</span>
+                           </div>
+                           <div id="word20" class="word" style="display:none">
+                              20. <span id="span20">______</span>
+                           </div>
+                           <div id="word21" class="word" style="display:none">
+                              21. <span id="span21">______</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <input type="text" id="text" class="writing" placeholder="Type something...">
+                        <input type="button" class="check-answer btn modalbtn modalbtn-non-pref" id="check-answer" value="Check" onclick ="checkAnswer()">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--/Gameboard-->
+      <!--Footer-->
+      <footer class="container-fluid bg-color-footer">
+         <div class="row">
+            <div class="col ml-auto">
+               <p class="sm--font">Created 2020</p>
+            </div>
+         </div>
+      </footer>
+      <!--/Footer-->
+      <!--LevelUp Modal-->
+      <div id="levelModal" class="modal">
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <h2 class="heading-modal">Congratulations!</h2>
+            </div>
+            <div class="modal-body">
+               <p id="lvl-modal-current">You've successfully completed level <span id="modalCurrentLevel">?</span>!</p>
+               <p id="lvl-modal-score">Your score is: <span id="modalCurrentScore">?</span></p>
+               <p id="lvl-modal-nextlvl">Continue on to level <span id="modalNextLevel">?</span>?</p>
+            </div>
+            <div class="modal-footer modalfooter">
+               <button id="lvl-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="restartGame(), closeLevelModal()">New Game</button>
+               <button id="nextLvlBtn" class="btn modalbtn modalbtn-pref ml-auto modalbtnright" onclick="levelUp(), closeLevelModal()">Play</button>
+            </div>
+         </div>
+      </div>
+      <!--/LevelUp Modal-->
+      <!--RoundUp Modal-->
+      <div id="roundModal" class="modal">
+         <div class="center modal-content">
+            <div class="modal-header modalheader">
+               <h2 class="heading-modal">You've Completed All 10 Levels!</h2>
+            </div>
+            <div class="modal-body">
+               <p id="rnd-modal-current">Congratulations! You finished Round <span id="modalCurrentRound">?</span>!</p>
+               <p id="rnd-modal-score">Your score is: <span id="rmodalCurrentScore">?</span></p>
+               <p id="rnd-modal-nextrnd">Want to continue to Round <span id="modalNextRound">?</span>?</p>
+            </div>
+            <div class="modal-footer modalfooter">
+               <button id="rnd-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="restartGame(), closeRoundModal()">New Game</button>
+               <button id="nextRndBtn" class="btn modalbtn modalbtn-pref ml-auto modalbtnright" onclick="roundUp(), closeRoundModal()">Play</button>
+            </div>
+         </div>
+      </div>
+      <!--/RoundUp Modal-->
+      <!--Bootstrap links-->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <!--/Bootstrap links-->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!--<script type="text/script" src="assets/js/game_objects.js"></script>
+      <script type="text/script" src="assets/js/helper_functions.js"></script>
+      <script type="text/script" src="assets/js/game_logic.js"></script>
+      <script type="text/script" src="assets/js/main.js"></script>-->
+      <script src="assets/js/game.js"></script>
+   </body>
+</html>
