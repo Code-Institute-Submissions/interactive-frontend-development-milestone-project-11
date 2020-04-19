@@ -232,7 +232,7 @@ function checkAnswer() {
     } else {
         console.log("Incorrect!");
         let f = "span" + (gameboard.currentWordIndex + 1);
-        document.getElementById(f).innerHTML = "______" + " " + "Try again!";
+        document.getElementById(f).innerHTML = "______" + "<br>"+ " " + "Try again!";
         document.getElementById(f).style.color = "red";
     }
 }

@@ -82,14 +82,14 @@
          --><button id="NewGame2" onclick="restartGame()" style="display: none">New Game</button>
       
       <div id="gameboardBackground" class="container-fluid container" style="display: none">
-        <div class= "row no-gutters">
-        <div id="gameboard" class="container-fluid col-12" style="display: none">
+        <div class= "row">
+        <div id="gameboard" class="container-fluid" style="display: none">
          <div id="scoreboard" class="row no-gutters">
             <div class="container-fluid col col-12">
             
-               <div class= "stats">Score: <span id="score" class="stats-data"></span></div>
-               <div class= "stats">Level: <span id="level" class="stats-data"></span></div>
-               <div class= "stats">Round: <span id="round" class="stats-data"></span></div>
+               <div id="scorestat" class= "stats">Score: <span id="score" class="stats-data"></span></div>
+               <div id="levelstat" class= "stats">Level: <span id="level" class="stats-data"></span></div>
+               <div id="roundstat" class= "stats">Round: <span id="round" class="stats-data"></span></div>
                <button id="statsNewGame" class="btn modalbtn modalbtn-non-pref" onclick="restartGame()">New Game</button>
             </div>
             
@@ -101,7 +101,7 @@
                </div>
             </div>
             <div class="row word--row">
-            <div id="first-col" class="col col-4 col-sm-4 col-words">
+            <div id="first-col" class="col col-4 col-sm-3 col-words">
                <div id="word1" class="word" style="display:none">
                   1. <span id="span1">______</span>
                </div>
@@ -124,7 +124,7 @@
                   7. <span id="span7">______</span>
                </div>
             </div>
-            <div id="second-col" class="col col-4 col-sm-4 col-words">
+            <div id="second-col" class="col col-4 col-sm-3 col-words">
                <div id="word8" class="word" >
                   8. <span id="span8">______</span>
                </div>
@@ -147,7 +147,7 @@
                   14. <span id="span14">______</span>
                </div>
             </div>
-            <div id="third-col" class="col col-4 col-sm-4 col-words">
+            <div id="third-col" class="col col-4 col-sm-3 col-words">
                <div id="word15" class="word" >
                   15. <span id="span15">______</span>
                </div>
