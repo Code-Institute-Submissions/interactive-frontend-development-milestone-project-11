@@ -33,15 +33,6 @@ font-family: 'Cormorant Garamond', serif;*/
 font-weight:700;
 }
 
-body {
-    background-image: url("../images/bookcasebottom.jpg");
-     min-height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-filter: grayscale(15%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(15%);
-}
 
 h1,h2,.btn {
 font-family: 'Fredericka the Great', cursive;
@@ -266,14 +257,30 @@ font-family: 'Itim', cursive;
 }
 
 /*--------------------------------------------Gameboard*/
-#gameboard{
-background-image: url("../images/page.jpg");
+#gameboardBackground {
+background-image: url("../images/bookcasebottom.jpg");
   min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  min-width: 100%;
+
+}
+
+
+
+#gameboard{
+background-image: url("../images/page.jpg");
+    width: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
   padding: 0;
+
 }
 
 #scoreboard {
