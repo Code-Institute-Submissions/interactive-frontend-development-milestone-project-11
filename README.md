@@ -32,7 +32,7 @@ A photo of parchement was used for the surface of the gameboard and a photo of a
 ### Fonts
 The concept of the fonts was to mimic the writing process - going from hand writing to printed words.
 For the input field in the game, Tangerine was chosen for its calligraphy style. The correct, printed word on the gameboard
-was the font'Nixie One'. The headings on the modals and navbar was the font 'Fredericka the Great', again for its visual link 
+was the font 'Nixie One'. The headings on the modals and navbar was the font 'Fredericka the Great', again for its visual link 
 to writing.
 
 ### User Journey
@@ -131,10 +131,9 @@ To run the project locally:
 8. W3C CSS Validator was used to validate the style.css file.
 9. W3C Markup Validator was used to validate the following files: index.html.
 10. HTML Formatter was used to format the following files: index.html.
+11. jQuery was also used.
 
 ## Credit
 - Thanks to Reuben Ferrante for advising as mentor on this project.
 - The code used in the construction of the navbar was obtained from the Code Institute "Whiskey Drop" tutorials.
-- The code used to style the social links in the footer of all the webpages, came from Code Institute's mini-bootstrap (resume project) tutorial.
-- The inspiration for and part of the code used for the timeline/navigation feature in the footer came from Code Institute's mini-bootstrap (resume project) tutorial.
-- The css code structure for the jumbotron and contact form buttons were modelled on the Facebook Sign up button (for the 3D effect).
+- The css code structure for the jumbotron and modal buttons were modelled on the Facebook Sign up button (for the 3D effect).
