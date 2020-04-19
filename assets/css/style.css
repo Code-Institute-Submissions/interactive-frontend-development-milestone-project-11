@@ -1,20 +1,16 @@
  
-/*---------------------------------------Font Links*/
+/*--------------------------------------------Font Links*/
 @import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Tangerine:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Special+Elite&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Special+Elite&display=swap');
-
-
+/*---------------------------------------------/Font Links*/
+/*---------------------------------------------General*/
 body {
     background-color:rgb(4, 1, 19); 
 }
+
 .writing {
 font-family: 'Tangerine', cursive;
 font-size: 32px;
@@ -26,12 +22,7 @@ color: rgb(18, 7, 80);
 
 
 .word {
-    font-family: 'Nixie One', cursive;  
- 
-/*font-family: 'Nanum Myeongjo', serif;
-
-font-family: 'Cormorant Garamond', serif;*/
-
+    font-family: 'Nixie One', cursive; 
 font-weight:700;
 }
 
@@ -45,6 +36,8 @@ font-weight: 500;
 font-family: 'Itim', cursive;
 }
 
+/*-------------------------------------------/General*/
+/*-------------------------------------------Navbar*/
 .navbar {
     background-image: linear-gradient(rgb(4, 1, 19), rgba(8, 8, 37, 0.945));
     color: #f5dd8e;
@@ -54,11 +47,6 @@ font-family: 'Itim', cursive;
 .navbar h1 {
     margin-top: 15px;
     margin-left: 7px;
-}
-
-#hr--callout {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
 }
 
 .navbar p {
@@ -76,6 +64,12 @@ font-family: 'Itim', cursive;
     margin-right: 50px;
 }
 }
+/*--------------------------------------------/Navbar*/
+/*--------------------------------------------Callout*/
+#hr--callout {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
 
 .callout-container {
     height: 100vh;
@@ -88,7 +82,6 @@ font-family: 'Itim', cursive;
     align-items: center;
     justify-content: center;
     position: relative;
-
 }
 
 .opaque-overlay {
@@ -125,7 +118,7 @@ font-family: 'Itim', cursive;
     margin-bottom: 0.5rem;
 }
 
-/*-------------------------------------------Structure From Facebook Button*/
+/*---Structure From Facebook Button*/
 .btn--jum {
     text-shadow: 1px 1px 1px rgb(24, 48, 22); 
     background: linear-gradient(#3b8628, #193b0c);
@@ -133,21 +126,20 @@ font-family: 'Itim', cursive;
     box-shadow: inset 0 1px 1px #7ebb64;
     border-color: #2b4e1a #274916 #112405;
 }
-/*-------------------------------------------Structure From Facebook Button*/
-
+/*---Structure From Facebook Button*/
+/*--------------------------------------------/Callout*/
 /*--------------------------------------------Modals - General*/
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
 .center {
@@ -155,21 +147,6 @@ font-family: 'Itim', cursive;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .modalheader {
@@ -237,9 +214,6 @@ font-family: 'Itim', cursive;
   }
 
 .modalbtnleft {
-    /*border: 1px solid rgba(59, 44, 6, 0.75);*/
-    /*border-radius: .25rem;*/
-    
     margin-bottom: 25px;
     font-size: 18px;
     letter-spacing: 1.5px;
@@ -281,8 +255,27 @@ margin-left: 30px;
 margin-right: 30px;
 }
 }
+@media (min-width: 768px) {
+.modal-content{
+    width: 60%;
+}
+.modal-body {
+    padding-left: 45px;
+    padding-right: 40px;
+}
 
-/*--------------------------------------------Modals - General*/
+.instruction-ul {
+    margin-bottom: 0px;
+}
+}
+
+@media (min-width: 992px) {
+   .modal-content{
+    max-width: 630px;
+}
+}
+/*--------------------------------------------/Modals - General*/
+/*--------------------------------------------Modals - Flashcard*/
 
 #flashcardNum {
     text-align: right;
@@ -302,9 +295,9 @@ margin-right: 30px;
 @media (min-width: 768px) {
    #flashcardModal .modal-content{
     max-width: 500px;
-
 }
 }
+/*--------------------------------------------Modals - Flashcard*/
 /*--------------------------------------------Modals - Level*/
 
 #lvl-modal-current {
@@ -321,9 +314,8 @@ margin-right: 30px;
     text-align: center;
     font-size: 16px;
 }
-
+/*--------------------------------------------/Modals - Level*/
 /*--------------------------------------------Modals - Round*/
-
 #rnd-modal-current {
     text-align: center;
     font-weight: bold;
@@ -339,7 +331,7 @@ margin-right: 30px;
     text-align: center;
     font-size: 16px;
 }
-
+/*--------------------------------------------/Modals - Round*/
 /*--------------------------------------------Gameboard*/
 #gameboardBackground {
 background-image: url("../images/bookcasebottom.jpg");
@@ -354,8 +346,6 @@ background-image: url("../images/bookcasebottom.jpg");
 
 }
 
-
-
 #gameboard{
 background-image: url("../images/page.jpg");
     width: 100%;
@@ -366,10 +356,6 @@ background-image: url("../images/page.jpg");
   padding: 0;
 
 }
-
-
-
-
 
 #scoreboard {
     background-color: rgba(80, 53, 18, 0.3);
@@ -389,15 +375,11 @@ background-image: url("../images/page.jpg");
     font-weight: 700;
 }
 
-
-
 #statsNewGame {
     margin-left: 20px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
-
-
 
 #statsNewGame:hover,
 #statsNewGame:focus {
@@ -410,9 +392,6 @@ background-image: url("../images/page.jpg");
     margin-left: 30px;
     margin-top: 10px;
 }
-
-
-    
 
 .icon {
     color: #377a1a;
@@ -437,9 +416,7 @@ background-image: url("../images/page.jpg");
     outline-color: rgb(18, 7, 80, 0.1);
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-
 }
-
 
 #check-answer{
     height: calc(1.5em + .75rem + 2px);
@@ -464,13 +441,10 @@ background-image: url("../images/page.jpg");
     text-align: center;
 }
 
-
 #check-answer:hover,
 #check-answer:focus {
     color: yellow;
 }
-
-
 
 .col-words {
     display: inline-block;
@@ -540,7 +514,6 @@ background-image: url("../images/page.jpg");
 }
 }
 
-
 @media (min-width: 800px) {
 .stats{
     margin-left: 40px;
@@ -553,17 +526,12 @@ background-image: url("../images/page.jpg");
 }
 }
 
-
 .word {
     display: inline-block;
     padding-top: 5px;
 }
-
-
-/*--------------------------------------------Gameboard*/
-
+/*--------------------------------------------/Gameboard*/
 /*--------------------------------------------Footer*/
-
 footer {
     background-image: linear-gradient(rgb(4, 1, 19), rgba(8, 8, 37, 0.945));
     color: #f5dd8e;
@@ -574,24 +542,4 @@ footer {
     font-size: 0.8rem;
     margin-top: 15px;
 }
-
-
-@media (min-width: 768px) {
-.modal-content{
-    width: 60%;
-}
-.modal-body {
-    padding-left: 45px;
-    padding-right: 40px;
-}
-
-.instruction-ul {
-    margin-bottom: 0px;
-}
-}
-
-@media (min-width: 992px) {
-   .modal-content{
-    max-width: 630px;
-}
-}
+/*--------------------------------------------/Footer*/
