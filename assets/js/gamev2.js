@@ -34,10 +34,12 @@ function generateWords() {
     console.log(leftWords);
 }
 
+/*
 function switchButton(){
     document.getElementById("NewGame1").style.display = "none";
     document.getElementById("NewGame2").style.display = "block";
 }
+*/
 
 function startGame() {
     setLevelRound();
@@ -193,7 +195,7 @@ function showSpaces(){
         console.log(e);
         document.getElementById(e).style.display = "block";
     } 
-    //focusTextField();
+    focusTextField();
     waitingForEnterKey();
 }
 
