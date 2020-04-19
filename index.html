@@ -198,13 +198,14 @@
                <h2 class="heading-modal">Congratulations!</h2>
             </div>
             <div class="modal-body">
-               <p id="lvl-modal-current">You've successfully completed level <span id="modalCurrentLevel">?</span></p>
+               <p id="lvl-modal-current">You've successfully completed level <span id="modalCurrentLevel">?</span>!</p>
                <p id="lvl-modal-score">Your score is: <span id="modalCurrentScore">?</span></p>
-               <p id="lvl-modal-nextlvl">Continue on to level <span id="modalNextLevel">?</span> ?</p>
+               <p id="lvl-modal-nextlvl">Continue on to level <span id="modalNextLevel">?</span>?</p>
             </div>
             <div class="modal-footer modalfooter">
-               <button id="nextLvlBtn" class="btn modalbtn modalbtnright modalbtn-pref" onclick="">Play</button>
-               <button id="lvl-modal-newGame" class="btn modalbtn modalbtnright modalbtn-non-pref" onclick="">Next</button>
+            <button id="lvl-modal-newGame" class="btn modalbtn modalbtn-non-pref mr-auto modalbtnleft" onclick="closeLevelModal()">New Game</button>
+               <button id="nextLvlBtn" class="btn modalbtn modalbtn-pref ml-auto modalbtnright" onclick="levelUp(), closeLevelModal()">Play</button>
+               
             </div>
          </div>
       </div>

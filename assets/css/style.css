@@ -189,7 +189,6 @@ font-family: 'Itim', cursive;
 }
 
   .modalbtnright {
-    margin-right: 30px;
     margin-bottom: 30px;
     font-size: 18px;
     letter-spacing: 1.5px;
@@ -198,7 +197,7 @@ font-family: 'Itim', cursive;
 .modalbtnleft {
     /*border: 1px solid rgba(59, 44, 6, 0.75);*/
     /*border-radius: .25rem;*/
-    margin-left: 30px;
+    
     margin-bottom: 25px;
     font-size: 18px;
     letter-spacing: 1.5px;
@@ -232,6 +231,14 @@ font-family: 'Itim', cursive;
     border: 1px solid rgb(36, 21, 1);
 }
 
+@media (min-width: 768px) {
+.modalbtnleft {
+margin-left: 30px;
+}
+.modalbtnright{
+margin-right: 30px;
+}
+}
 
 /*--------------------------------------------Modals - General*/
 
@@ -256,6 +263,26 @@ font-family: 'Itim', cursive;
 
 }
 }
+/*--------------------------------------------Modals - Level*/
+
+#lvl-modal-current {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+#lvl-modal-score{
+    text-align: center;
+    font-size: 16px;
+}
+
+#lvl-modal-nextlvl{
+    text-align: center;
+    font-size: 16px;
+}
+/*
+#nextLvlBtn
+
+#lvl-modal-newGame*/
 
 /*--------------------------------------------Gameboard*/
 #gameboardBackground {

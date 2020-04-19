@@ -225,7 +225,8 @@ function checkAnswer() {
         scoreUp();
         clearText();
         if (gameboard.currentWordIndex == gameboard.lastWordIndex) {
-            levelUp();
+            showLevelModal();
+            //levelUp();
         } else {
             gameboard.incrementWordIndex();
         }
@@ -293,13 +294,25 @@ var flashcardModal = document.getElementById("flashcardModal");
 // Get the button that opens the modal
 var nextBtn = document.getElementById("nextBtn");
 
-// When the user clicks on the button, open the modal
 function showFlashcardsModal() {
   flashcardModal.style.display = "block";
 }
-
-
-// When the user clicks on <span> (x), close the modal
 function closeFlashcards() {
   flashcardModal.style.display = "none";
+}
+
+var levelModal = document.getElementById("levelModal");
+
+function showLevelModal() {
+    levelModal.style.display = "block";
+    let level = parseInt(sessionStorage.getItem("level"));
+    let nextlevel = level + 1;
+    let score = sessionStorage.getItem("score");
+    document.getElementById("modalCurrentLevel").innerHTML = level;
+    document.getElementById("modalCurrentScore").innerHTML = score;
+    document.getElementById("modalNextLevel").innerHTML = nextlevel;
+}
+
+function closeLevelModal() {
+  levelModal.style.display = "none";
 }
